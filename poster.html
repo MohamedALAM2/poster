@@ -64,7 +64,7 @@
     padding:26mm 26mm 22mm;
     display:flex; flex-direction:column;
     justify-content:flex-start;
-    gap:7mm;
+    gap:3.5mm;
   }
 
   /* thin brand frame */
@@ -128,18 +128,18 @@
   }
   .title .logo{ height:58mm; width:58mm; object-fit:contain; flex:none;
     filter:drop-shadow(0 2mm 5mm rgba(0,0,0,.28)); }
-  .title h1{ font-size:38mm; line-height:.98; margin:0; font-weight:900; letter-spacing:-0.5mm; }
+  .title h1{ font-size:42mm; line-height:.98; margin:0; font-weight:900; letter-spacing:-0.5mm; }
   .title h1 .lens{ color:var(--cyan); }
-  .title .sub{ font-size:10.5mm; font-weight:600; color:#cfe6f5; margin-top:4mm; }
+  .title .sub{ font-size:12mm; font-weight:600; color:#cfe6f5; margin-top:4mm; }
   .title .tags{ margin-top:6.5mm; display:flex; gap:4.5mm; flex-wrap:wrap; justify-content:center; }
-  .title .tag{ font-size:5.8mm; font-weight:700; background:rgba(255,255,255,.12);
-    border:.4mm solid rgba(255,255,255,.35); padding:2.8mm 6mm; border-radius:20mm; }
+  .title .tag{ font-size:6.4mm; font-weight:700; background:rgba(255,255,255,.12);
+    border:.4mm solid rgba(255,255,255,.35); padding:3.2mm 6.8mm; border-radius:20mm; }
   .title .head-txt{ flex:1; min-width:0; text-align:center; display:flex; flex-direction:column;
     align-items:center; justify-content:center; }
   .title .qrbox{ margin-left:auto; flex:none; text-align:center; }
   .title .qrbox img{ width:56mm; height:56mm; background:transparent;
     border:0; border-radius:0; padding:0; display:block; }
-  .title .qrbox span{ display:block; font-size:5mm; font-weight:700; color:#cfe6f5; margin-top:3mm; }
+  .title .qrbox span{ display:block; font-size:5.5mm; font-weight:700; color:#cfe6f5; margin-top:3mm; }
 
   /* ====================== STATS STRIP ====================== */
   .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:8mm; }
@@ -150,14 +150,14 @@
   .stat .lbl{ font-size:5.6mm; font-weight:700; color:var(--muted); margin-top:3.5mm; text-transform:uppercase; letter-spacing:.3mm; }
 
   /* ====================== SECTION CARDS ====================== */
-  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
   .card{
     background:#fff; border:.6mm solid var(--line); border-radius:var(--radius);
-    padding:8mm 10mm; box-shadow:0 1.5mm 6mm rgba(13,27,42,.05);
+    padding:7mm 9mm; box-shadow:0 1.5mm 6mm rgba(13,27,42,.05);
   }
   .card.full{ grid-column:1 / -1; }
   /* distinctive section heading: a colored label/tab (square number + icon + title) */
-  .sec-head{ display:inline-flex; align-items:center; gap:5.5mm; margin:0 0 6mm;
+  .sec-head{ display:inline-flex; align-items:center; gap:5.5mm; margin:0 0 5mm;
     background:linear-gradient(135deg,var(--navy),#13456e);
     border-radius:9mm; padding:4.5mm 12mm 4.5mm 4.5mm;
     box-shadow:0 2mm 6mm rgba(11,42,74,.20); }
@@ -167,11 +167,11 @@
   .sec-head .ic{ width:15mm; height:15mm; border-radius:4mm; flex:none;
     display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.16); }
   .sec-head .ic img{ width:10mm; height:10mm; object-fit:contain; filter:brightness(0) invert(1); }
-  .sec-head h2{ font-size:10.5mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
-  .card p{ font-size:6.7mm; line-height:1.55; color:var(--ink); margin:0; }
+  .sec-head h2{ font-size:11.4mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
+  .card p{ font-size:7.2mm; line-height:1.5; color:var(--ink); margin:0; }
 
   .obj-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5.5mm; }
-  .obj-list li{ display:flex; gap:5.5mm; align-items:flex-start; font-size:7mm; line-height:1.45; }
+  .obj-list li{ display:flex; gap:5.5mm; align-items:flex-start; font-size:7.5mm; line-height:1.4; }
   .obj-list li img{ width:9mm; height:9mm; margin-top:1mm; flex:none; }
 
   /* ====================== ARCHITECTURE FLOW ====================== */
@@ -180,7 +180,7 @@
     border:.6mm solid var(--line); border-top:3mm solid var(--blue); border-radius:9mm;
     padding:11mm 4mm; margin:4mm; display:flex; flex-direction:column; align-items:center; gap:4mm; }
   .node img{ width:19mm; height:19mm; object-fit:contain; }
-  .node .t{ font-size:6.4mm; font-weight:800; color:var(--navy); line-height:1.15; }
+  .node .t{ font-size:7mm; font-weight:800; color:var(--navy); line-height:1.15; }
   .node.c{ border-top-color:var(--cyan); } .node.g{ border-top-color:var(--green); }
   .node.p{ border-top-color:var(--purple); } .node.r{ border-top-color:var(--red); }
   .node.gd{ border-top-color:var(--gold); }
@@ -199,8 +199,8 @@
   .tool{ display:flex; flex-direction:column; align-items:center; gap:3mm; background:var(--soft);
     border:.5mm solid var(--line); border-radius:10mm; padding:5mm 3mm; }
   .tool img{ width:19mm; height:19mm; object-fit:contain; }
-  .tool span{ font-size:4.8mm; font-weight:800; color:var(--navy); text-align:center; line-height:1.1; }
-  .tool small{ font-size:3.8mm; color:var(--muted); }
+  .tool span{ font-size:5.3mm; font-weight:800; color:var(--navy); text-align:center; line-height:1.1; }
+  .tool small{ font-size:4.2mm; color:var(--muted); }
 
   /* ====================== SCREENSHOTS (single row of phone mockups) ====================== */
   .shots{ display:grid; grid-template-columns:repeat(7,1fr); gap:6mm; align-items:start; }
@@ -215,8 +215,8 @@
   .phone .screen img{ width:100%; height:100%; object-fit:contain; }
   .phone .screen .ph-txt{ font-size:3.3mm; font-weight:700; color:#8298b6; padding:4mm; line-height:1.3; }
   .shot .cap{ margin-top:5mm; }
-  .shot .cap b{ font-size:4.6mm; color:var(--navy); }
-  .shot .cap span{ display:block; font-size:3.7mm; color:var(--muted); margin-top:1.2mm; line-height:1.3; }
+  .shot .cap b{ font-size:5mm; color:var(--navy); }
+  .shot .cap span{ display:block; font-size:4mm; color:var(--muted); margin-top:1.2mm; line-height:1.25; }
 
   .sub-label{ display:flex; align-items:center; gap:4mm; font-size:6mm; font-weight:800; color:var(--blue);
     margin:2mm 0 6mm; }
@@ -236,8 +236,8 @@
   .browser .scr img{ width:100%; height:100%; object-fit:cover; }
   .browser .scr .ph-txt{ font-size:4.4mm; font-weight:700; color:var(--muted); }
   .webshot .cap{ margin-top:5mm; }
-  .webshot .cap b{ font-size:4.8mm; color:var(--navy); }
-  .webshot .cap span{ display:block; font-size:3.9mm; color:var(--muted); margin-top:1.2mm; }
+  .webshot .cap b{ font-size:5.1mm; color:var(--navy); }
+  .webshot .cap span{ display:block; font-size:4.1mm; color:var(--muted); margin-top:1.2mm; }
 
   /* ====================== PEOPLE ====================== */
   .people{ display:grid; grid-template-columns:1fr 1.55fr; gap:10mm; align-items:stretch; }
@@ -252,15 +252,15 @@
   .sup .person .ph img,
   .sup .person img.ph{ width:100%; height:100%; max-width:100%; max-height:100%;
     display:block; object-fit:cover; border-radius:inherit; }
-  .sup .person .nm{ font-size:6mm; font-weight:900; color:var(--navy); line-height:1.15; }
-  .sup .person .rl{ font-size:4.8mm; font-weight:700; color:var(--blue); margin-top:1.2mm; }
+  .sup .person .nm{ font-size:6.6mm; font-weight:900; color:var(--navy); line-height:1.15; }
+  .sup .person .rl{ font-size:5.2mm; font-weight:700; color:var(--blue); margin-top:1.2mm; }
 
   .team{ display:grid; grid-template-columns:repeat(4,1fr); gap:7mm; align-items:start; }
   .member{ align-self:start; text-align:center; background:#fff; border:.5mm solid var(--line); border-radius:10mm; padding:6mm 3mm 5.5mm; }
   .member img{ width:38mm; height:38mm; border-radius:50%; object-fit:cover; border:1.2mm solid var(--cyan); }
   .member img.portrait-lower{ object-position:center 0%; }
-  .member .nm{ font-size:5.6mm; font-weight:800; color:var(--navy); margin-top:4mm; line-height:1.2; }
-  .member .rl{ font-size:4.8mm; color:var(--muted); margin-top:1.5mm; }
+  .member .nm{ font-size:6.1mm; font-weight:800; color:var(--navy); margin-top:4mm; line-height:1.2; }
+  .member .rl{ font-size:5.1mm; color:var(--muted); margin-top:1.5mm; }
 
   /* featured team lead: tall photo spanning both rows in the first column */
   .member.lead{ grid-row:span 2; min-height:118mm; display:flex; flex-direction:column; align-items:center;
@@ -273,15 +273,15 @@
   .member.lead .nm{ font-size:6mm; margin-top:0; }
   .member.lead .rl{ font-size:5mm; font-weight:700; color:var(--blue); }
 
-  .people-head{ font-size:9mm; font-weight:900; color:var(--navy); margin:0 0 3mm; }
+  .people-head{ font-size:10mm; font-weight:900; color:var(--navy); margin:0 0 3mm; }
 
   /* ====================== BOTTOM SHOWCASE ====================== */
-  .showcase{ display:grid; grid-template-columns:1fr; gap:9mm;
+  .showcase{ display:grid; grid-template-columns:1fr; gap:6mm;
     grid-template-areas:"shots" "people"; align-items:start; }
   .sc-people{ grid-area:people; }
   .sc-shots{ grid-area:shots; }
   .sc-people.people{ grid-template-columns:1fr 1.55fr; gap:10mm; align-items:start; }
-  .sc-shots .shot-columns{ display:grid; grid-template-columns:1fr; gap:9mm; align-items:start; }
+  .sc-shots .shot-columns{ display:grid; grid-template-columns:1fr; gap:6mm; align-items:start; }
   .sc-shots .shot-col{ min-width:0; }
   .sc-shots .shots{ display:grid; gap:5mm; justify-items:center; align-items:start; }   /* columns set live by JS */
   .sc-shots .shot{ width:100%; }
@@ -302,15 +302,15 @@
   /* ====================== ABSTRACT (highlight banner) ====================== */
   .abstract{ position:relative; overflow:hidden; color:#fff;
     background:linear-gradient(135deg,var(--navy),#10395f 55%,#0e4e74);
-    border-radius:var(--radius); padding:8mm 13mm 9mm; box-shadow:0 3mm 10mm rgba(11,42,74,.18); }
+    border-radius:var(--radius); padding:7mm 12mm 8mm; box-shadow:0 3mm 10mm rgba(11,42,74,.18); }
   .abstract::after{ content:""; position:absolute; right:-22mm; top:-22mm; width:95mm; height:95mm;
     background:radial-gradient(closest-side, rgba(0,167,196,.30), transparent); pointer-events:none; }
   .abstract .ab-head{ display:flex; align-items:center; gap:5mm; margin-bottom:5mm; }
   .abstract .ab-head .ic{ width:15mm; height:15mm; border-radius:4mm; flex:none;
     background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center; }
   .abstract .ab-head .ic img{ width:10mm; height:10mm; }
-  .abstract .ab-head h2{ font-size:11mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
-  .abstract p{ margin:0; font-size:6.8mm; line-height:1.5; color:#eaf3fb; position:relative; z-index:1; }
+  .abstract .ab-head h2{ font-size:11.8mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
+  .abstract p{ margin:0; font-size:7.2mm; line-height:1.48; color:#eaf3fb; position:relative; z-index:1; }
   .abstract p b{ color:#fff; }
 
   /* ====================== PROBLEM / SOLUTION accent tabs ====================== */
@@ -328,8 +328,8 @@
   .arch .badge::after{ content:""; position:absolute; inset:-2.6mm; border-radius:50%;
     border:.8mm dashed rgba(21,101,216,.35); }
   .arch .badge img{ width:21mm; height:21mm; object-fit:contain; }
-  .arch .alabel{ font-size:5.4mm; font-weight:800; color:var(--navy); line-height:1.15; }
-  .arch .asub{ font-size:4.2mm; color:var(--muted); line-height:1.2; }
+  .arch .alabel{ font-size:6mm; font-weight:800; color:var(--navy); line-height:1.15; }
+  .arch .asub{ font-size:4.7mm; color:var(--muted); line-height:1.2; }
   .arch .conn{ flex:0 0 auto; align-self:flex-start; margin-top:15mm; font-size:11mm; font-weight:900;
     color:var(--blue); padding:0 1mm; }
 
@@ -360,14 +360,14 @@
   .mini-head .ic{ width:11mm; height:11mm; border-radius:3mm; flex:none; background:rgba(255,255,255,.2);
     display:flex; align-items:center; justify-content:center; }
   .mini-head .ic img{ width:7mm; height:7mm; filter:brightness(0) invert(1); }
-  .mini-head h3{ font-size:7.6mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
+  .mini-head h3{ font-size:8.4mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
   .mini-head.red,
   .mini-head.green{ background:linear-gradient(135deg,var(--navy),#13456e); }
   .mini-head.red .n{ background:#fff; color:var(--red); }
   .mini-head.green .n{ background:#fff; color:var(--green); }
-  .mini-card p{ font-size:6mm; line-height:1.48; margin:0; }
+  .mini-card p{ font-size:7mm; line-height:1.45; margin:0; }
   .grid .obj-list{ gap:4mm; }
-  .grid .obj-list li{ gap:4mm; font-size:5.8mm; line-height:1.32; }
+  .grid .obj-list li{ gap:4mm; font-size:6.7mm; line-height:1.3; }
   .grid .obj-list li img{ width:7mm; height:7mm; margin-top:.6mm; }
 
   /* ====================== KEY FEATURES ====================== */
@@ -375,8 +375,8 @@
   .feat{ display:flex; align-items:center; gap:5mm; background:var(--soft);
     border:.5mm solid var(--line); border-radius:9mm; padding:6mm 5mm; }
   .feat img{ width:16mm; height:16mm; object-fit:contain; flex:none; }
-  .feat .ft{ font-size:5.4mm; font-weight:800; color:var(--navy); line-height:1.15; }
-  .feat .fd{ font-size:4mm; color:var(--muted); margin-top:1mm; line-height:1.2; }
+  .feat .ft{ font-size:6mm; font-weight:800; color:var(--navy); line-height:1.15; }
+  .feat .fd{ font-size:4.5mm; color:var(--muted); margin-top:1mm; line-height:1.2; }
 
   /* ====================== METHODOLOGY (vertical timeline inside narrow card) ====================== */
   .mtimeline{ display:flex; flex-direction:column; gap:5.5mm; }
@@ -387,19 +387,19 @@
   .mrow .mnum{ position:absolute; top:-2.5mm; right:-2.5mm; width:9mm; height:9mm; border-radius:50%;
     background:var(--blue); color:#fff; font-size:5mm; font-weight:900; border:.7mm solid #fff;
     display:flex; align-items:center; justify-content:center; }
-  .mrow .mt{ font-size:5.6mm; font-weight:800; color:var(--navy); line-height:1.2; }
+  .mrow .mt{ font-size:6.2mm; font-weight:800; color:var(--navy); line-height:1.2; }
 
   /* tools grid when placed in the narrow Tools|Methodology row */
   .grid .tools{ grid-template-columns:repeat(3,1fr); gap:6mm; }
 
   /* ====================== FOOTER ====================== */
   .footer{ display:flex; align-items:center; justify-content:space-between; gap:10mm;
-    border-top:.8mm solid var(--line); padding-top:9mm; margin-top:1mm; }
+    border-top:.8mm solid var(--line); padding-top:5mm; margin-top:0; }
   .footer .qr{ display:flex; align-items:center; gap:7mm; }
   .footer .qr img{ width:40mm; height:40mm; border:.6mm solid var(--line); border-radius:5mm; padding:1.5mm; background:#fff; }
-  .footer .qr .qt b{ font-size:6.8mm; color:var(--navy); }
-  .footer .qr .qt span{ display:block; font-size:5.6mm; color:var(--muted); margin-top:1.2mm; }
-  .footer .meta{ text-align:right; font-size:6mm; color:var(--muted); line-height:1.6; }
+  .footer .qr .qt b{ font-size:7.5mm; color:var(--navy); }
+  .footer .qr .qt span{ display:block; font-size:6mm; color:var(--muted); margin-top:1.2mm; }
+  .footer .meta{ text-align:right; font-size:6.6mm; color:var(--muted); line-height:1.6; }
   .footer .meta b{ color:var(--navy); }
 
   /* ====================== EDIT TOOLBAR (screen only) ====================== */
@@ -891,7 +891,7 @@
     var mc = cfg.mobile.count, mcols = Math.min(cfg.mobile.cols, mc || 1);
     var mMount = document.getElementById('mobileMount');
     if(mc > 0){
-      var fb = capFont(mcols, 4.2, 3.7, 3.3), fs = capFont(mcols, 3.3, 3.0, 2.7);
+      var fb = capFont(mcols, 4.9, 4.4, 3.8), fs = capFont(mcols, 3.9, 3.6, 3.1);
       var html = '<div class="sub-label"><img src="images/icons/mobile.png" alt="" style="width:7mm;height:7mm">Mobile App (Flutter)</div>'+
                  '<div class="shots" style="grid-template-columns:repeat('+mcols+',minmax(0,1fr))">';
       for(var i=0;i<mc;i++){ html += phoneItem(mobileData[i], phoneCap[mcols], fb, fs); }
@@ -903,7 +903,7 @@
     var wc = cfg.web.count, wcols = Math.min(cfg.web.cols, wc || 1);
     var wMount = document.getElementById('webMount');
     if(wc > 0){
-      var wfb = capFont(wcols, 4.0, 3.7, 3.3), wfs = capFont(wcols, 3.3, 3.1, 2.7);
+      var wfb = capFont(wcols, 4.8, 4.3, 3.7), wfs = capFont(wcols, 3.8, 3.5, 3.0);
       var top = '';
       var whtml = '<div class="sub-label"'+top+'><img src="images/icons/web.png" alt="" style="width:7mm;height:7mm">Web Dashboard</div>'+
                   '<div class="webshots" style="grid-template-columns:repeat('+wcols+',minmax(0,1fr))">';
