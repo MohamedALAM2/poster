@@ -83,41 +83,127 @@
 
   /* ====================== HEADER ====================== */
   .topbar{
-    display:flex; align-items:flex-start; justify-content:space-between; gap:10mm;
-    padding-bottom:5mm;
+    position:relative;
+    min-height:124mm;
+    display:grid;
+    grid-template-columns:132mm 1fr 112mm;
+    align-items:flex-start;
+    gap:16mm;
+    padding:0 0 8mm;
+    border-bottom:.6mm solid rgba(11,42,74,.14);
   }
-  .topbar .logo-ribbon{
-    position:relative; top:-17mm; width:58mm; min-height:84mm; flex:none;
-    display:flex; align-items:center; justify-content:center;
+  .institution-ribbon{
+    position:relative;
+    top:-19mm;
+    width:108mm;
+    min-height:132mm;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
     background:#12395b;
-    border:.8mm solid #1d6087; border-radius:0 0 4mm 4mm;
-    padding:20mm 6mm 12mm;
+    border:.9mm solid #1d6087;
+    border-top:4mm solid var(--blue);
+    border-radius:0 0 3mm 3mm;
     box-shadow:0 2mm 7mm rgba(13,27,42,.18);
   }
-  .topbar .logo-ribbon::before{
-    content:""; position:absolute; inset:2.4mm;
-    background:#12395b;
-    border:.45mm solid rgba(255,255,255,.18); border-radius:0 0 2.5mm 2.5mm;
+  .institution-ribbon::before{
+    content:""; position:absolute; inset:3mm;
+    border:.45mm solid rgba(255,255,255,.2);
+    border-radius:0 0 2.5mm 2.5mm;
     pointer-events:none;
   }
-  .topbar .logo-ribbon::after{
-    content:""; position:absolute; left:0; bottom:-15mm;
-    width:33mm; height:16mm;
+  .institution-ribbon::after{
+    content:""; position:absolute; left:-.9mm; right:-.9mm; bottom:-32mm;
+    height:34mm;
     background:#12395b;
-    clip-path:polygon(0 0, 100% 0, 100% 100%);
+    clip-path:polygon(0 0, 100% 0, 50% 100%);
     filter:drop-shadow(0 1.3mm 1mm rgba(13,27,42,.16));
   }
-  .topbar .logo-ribbon.uni{ border-top:3mm solid var(--blue); }
-  .topbar .logo-ribbon.fac{ border-top:3mm solid var(--cyan); }
-  .topbar .logo-ribbon.fac::after{
-    left:auto; right:0;
-    clip-path:polygon(0 0, 100% 0, 0 100%);
+  .ribbon-logo{
+    position:relative;
+    z-index:1;
+    min-height:57mm;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3mm;
+    padding:8mm 7mm;
+    text-align:center;
   }
-  .topbar .logo-ribbon img{
-    position:relative; z-index:1; max-height:43mm; max-width:44mm; width:auto; object-fit:contain;
+  .ribbon-logo + .ribbon-logo{
+    border-top:.55mm solid rgba(255,255,255,.25);
   }
-  .topbar .uni-text{ flex:1; text-align:center; line-height:1.28; padding-top:18mm; }
-  .topbar .uni-text .u3{ font-size:9mm; font-weight:800; color:var(--navy); letter-spacing:.2mm; }
+  .ribbon-logo img{ max-width:44mm; max-height:42mm; object-fit:contain; }
+  .ribbon-logo span{ font-size:5.2mm; font-weight:800; color:#eaf3fb; line-height:1.15; }
+  .top-title{
+    min-width:0;
+    padding-top:37mm;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10mm;
+  }
+  .uni-text{ width:100%; text-align:center; line-height:1.28; }
+  .uni-text .u3{ font-size:11mm; font-weight:800; color:var(--navy); letter-spacing:.2mm; }
+  .brand-row{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:12mm;
+  }
+  .project-logo-card{
+    width:74mm;
+    height:74mm;
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    border:.8mm solid var(--navy);
+    border-radius:5mm;
+    box-shadow:0 1.5mm 5mm rgba(13,27,42,.12);
+  }
+  .project-logo-card img{
+    width:56mm;
+    height:56mm;
+    object-fit:contain;
+    filter:drop-shadow(0 1.4mm 3mm rgba(13,27,42,.2));
+  }
+  .brand-copy{ min-width:0; }
+  .brand-copy h1{ font-size:39mm; line-height:1; margin:0; font-weight:900; letter-spacing:-.35mm; color:#fff; }
+  .brand-copy h1 .crime-word{
+    color:var(--navy);
+    text-shadow:
+      -.45mm -.45mm 0 #fff,
+       .45mm -.45mm 0 #fff,
+      -.45mm  .45mm 0 #fff,
+       .45mm  .45mm 0 #fff;
+  }
+  .brand-copy h1 .lens{ color:var(--cyan); }
+  .brand-copy .sub{ font-size:10.2mm; font-weight:700; color:var(--navy); margin-top:3mm; }
+  .brand-copy .tags{ margin-top:5mm; display:flex; gap:3.5mm; flex-wrap:wrap; }
+  .brand-copy .tag{ font-size:5.4mm; font-weight:800; color:var(--navy); background:var(--soft);
+    border:.35mm solid var(--line); padding:2.3mm 4.8mm; border-radius:20mm; }
+  .top-qr{
+    position:relative;
+    align-self:flex-start;
+    margin-top:70mm;
+    min-height:70mm;
+    padding:6mm 0 0 9mm;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .top-qr::before{
+    content:""; position:absolute; left:0; top:0; width:62mm; height:45mm;
+    border-left:.9mm solid var(--navy);
+    border-top:.9mm solid var(--navy);
+    pointer-events:none;
+  }
+  .top-qr img{ width:54mm; height:54mm; object-fit:contain; display:block; }
+  .top-qr span{ display:block; margin-top:3mm; font-size:5.8mm; font-weight:800; color:var(--navy); }
 
   /* ====================== TITLE ====================== */
   .title{
@@ -404,12 +490,6 @@
   .footer .meta b{ color:var(--navy); }
 
   /* ====================== SPACE-FILLING ENLARGEMENT PASS ====================== */
-  .topbar{ padding-bottom:10mm; }
-  .topbar .logo-ribbon{ width:66mm; min-height:96mm; padding:22mm 7mm 14mm; }
-  .topbar .logo-ribbon img{ max-height:50mm; max-width:51mm; }
-  .topbar .uni-text{ padding-top:22mm; }
-  .topbar .uni-text .u3{ font-size:11mm; }
-
   .title{ gap:15mm; padding:15mm 22mm; }
   .title .logo{ width:66mm; height:66mm; }
   .title h1{ font-size:47mm; }
@@ -605,35 +685,39 @@
 
   <!-- ===================== HEADER ===================== -->
   <header class="topbar">
-    <div class="logo-ribbon uni">
-      <img src="images/logo-university-clean.png" alt="Beni-Suef University" />
-    </div>
-    <div class="uni-text">
-      <div class="u3">Graduation Project · Academic Year 2025 / 2026</div>
-    </div>
-    <div class="logo-ribbon fac">
-      <img src="images/logo-faculty-clean.png" alt="Faculty of Computers and AI" />
-    </div>
-  </header>
-
-  <!-- ===================== TITLE ===================== -->
-  <section class="title">
-    <img class="logo" src="images/logo-crimelens2.png" alt="CrimeLens logo" />
-    <div class="head-txt">
-      <h1>Crime<span class="lens">Lens</span></h1>
-      <div class="sub">AI-Powered Crime Detection &amp; Smart Surveillance System</div>
-      <div class="tags">
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Real-Time Video Analysis</span>
-        <span class="tag">Smart Alerts</span>
-        <span class="tag">Security Dashboard</span>
+    <div class="institution-ribbon">
+      <div class="ribbon-logo">
+        <img src="images/logo-university-clean.png" alt="Beni-Suef University" />
+        <span>Beni-Suef University</span>
+      </div>
+      <div class="ribbon-logo">
+        <img src="images/logo-faculty-clean.png" alt="Faculty of Computers and AI" />
+        <span>Faculty of Computers &amp; AI</span>
       </div>
     </div>
-    <div class="qrbox">
-      <img src="images/qr-dark.png" alt="Project QR" />
+    <div class="top-title">
+      
+      <div class="brand-row">
+        <div class="project-logo-card">
+          <img class="logo" src="images/logo-crimelens2.png" alt="CrimeLens logo" />
+        </div>
+        <div class="brand-copy">
+          <h1><span class="crime-word">Crime</span><span class="lens">Lens</span></h1>
+          <div class="sub">AI-Powered Crime Detection &amp; Smart Surveillance System</div>
+          <div class="tags">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Real-Time Video Analysis</span>
+            <span class="tag">Smart Alerts</span>
+            <span class="tag">Security Dashboard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-qr">
+      <img src="images/qr.png" alt="Project QR" />
       <span>Scan for demo &amp; docs</span>
     </div>
-  </section>
+  </header>
 
   <!-- ===================== ABSTRACT (highlight banner) ===================== -->
   <section class="abstract">
