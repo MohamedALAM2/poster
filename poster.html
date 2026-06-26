@@ -374,18 +374,16 @@
   .sc-shots .sub-label{ margin-bottom:4mm; }
 
   /* ====================== ABSTRACT (highlight banner) ====================== */
-  .abstract{ position:relative; overflow:hidden; color:#fff;
-    background:linear-gradient(135deg,var(--navy),#10395f 55%,#0e4e74);
-    border-radius:var(--radius); padding:7mm 12mm 8mm; box-shadow:0 3mm 10mm rgba(11,42,74,.18); }
-  .abstract::after{ content:""; position:absolute; right:-22mm; top:-22mm; width:95mm; height:95mm;
-    background:radial-gradient(closest-side, rgba(0,167,196,.30), transparent); pointer-events:none; }
+  .abstract{ position:relative; overflow:hidden;
+    background:#fff; border:.6mm solid var(--line); border-radius:var(--radius);
+    padding:7mm 12mm 8mm; box-shadow:0 1.5mm 6mm rgba(13,27,42,.05); }
   .abstract .ab-head{ display:flex; align-items:center; gap:5mm; margin-bottom:5mm; }
   .abstract .ab-head .ic{ width:15mm; height:15mm; border-radius:4mm; flex:none;
-    background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center; }
+    background:rgba(11,42,74,.08); display:flex; align-items:center; justify-content:center; }
   .abstract .ab-head .ic img{ width:10mm; height:10mm; }
-  .abstract .ab-head h2{ font-size:11.8mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
-  .abstract p{ margin:0; font-size:7.2mm; line-height:1.48; color:#eaf3fb; position:relative; z-index:1; }
-  .abstract p b{ color:#fff; }
+  .abstract .ab-head h2{ font-size:11.8mm; margin:0; font-weight:900; color:var(--navy); letter-spacing:.2mm; }
+  .abstract p{ margin:0; font-size:7.2mm; line-height:1.48; color:var(--ink); position:relative; z-index:1; }
+  .abstract p b{ color:var(--navy); }
 
   /* ====================== PROBLEM / SOLUTION accent tabs ====================== */
   .sec-head.red{ background:linear-gradient(135deg,#9e2330,#d23a4a); }
