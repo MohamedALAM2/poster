@@ -57,14 +57,15 @@
   }
 
   .poster{
-    width:900mm; height:2000mm;
+    width:900mm; min-height:0; height:auto;
     background:var(--bg);
     position:relative;
     overflow:hidden;
-    padding:26mm 26mm 22mm;
+    padding:28mm 28mm 24mm;
     display:flex; flex-direction:column;
+    flex:0 0 auto;
     justify-content:flex-start;
-    gap:3.5mm;
+    gap:15mm;
   }
 
   /* thin brand frame */
@@ -401,6 +402,117 @@
   .footer .qr .qt span{ display:block; font-size:6mm; color:var(--muted); margin-top:1.2mm; }
   .footer .meta{ text-align:right; font-size:6.6mm; color:var(--muted); line-height:1.6; }
   .footer .meta b{ color:var(--navy); }
+
+  /* ====================== SPACE-FILLING ENLARGEMENT PASS ====================== */
+  .topbar{ padding-bottom:10mm; }
+  .topbar .logo-ribbon{ width:66mm; min-height:96mm; padding:22mm 7mm 14mm; }
+  .topbar .logo-ribbon img{ max-height:50mm; max-width:51mm; }
+  .topbar .uni-text{ padding-top:22mm; }
+  .topbar .uni-text .u3{ font-size:11mm; }
+
+  .title{ gap:15mm; padding:15mm 22mm; }
+  .title .logo{ width:66mm; height:66mm; }
+  .title h1{ font-size:47mm; }
+  .title .sub{ font-size:13.7mm; margin-top:5mm; }
+  .title .tags{ gap:6mm; margin-top:8mm; }
+  .title .tag{ font-size:7.8mm; padding:4mm 8mm; }
+  .title .qrbox img{ width:64mm; height:64mm; }
+  .title .qrbox span{ font-size:6.8mm; }
+
+  .abstract{ padding:9mm 15mm 10mm; }
+  .abstract .ab-head{ gap:6mm; margin-bottom:6.5mm; }
+  .abstract .ab-head .ic{ width:18mm; height:18mm; }
+  .abstract .ab-head .ic img{ width:12mm; height:12mm; }
+  .abstract .ab-head h2{ font-size:14mm; }
+  .abstract p{ font-size:8.4mm; line-height:1.52; }
+
+  .grid{ gap:16mm; }
+  .card{ padding:9mm 11mm; }
+  .sec-head{ gap:6.5mm; margin-bottom:7mm; padding:5.5mm 15mm 5.5mm 5.5mm; }
+  .sec-head .ic{ width:18mm; height:18mm; }
+  .sec-head .ic img{ width:12mm; height:12mm; }
+  .sec-head h2{ font-size:13.4mm; }
+  .card p{ font-size:8.3mm; line-height:1.52; }
+
+  .mini-head{ gap:5mm; margin-bottom:6.5mm; padding:4.2mm 11mm 4.2mm 4.2mm; }
+  .mini-head .ic{ width:14mm; height:14mm; }
+  .mini-head .ic img{ width:9mm; height:9mm; }
+  .mini-head h3{ font-size:10.3mm; }
+  .mini-card p{ font-size:8.1mm; line-height:1.48; }
+
+  .feats{ gap:9mm; }
+  .feat{ gap:7mm; padding:8mm 7mm; }
+  .feat img{ width:21mm; height:21mm; }
+  .feat .ft{ font-size:7.6mm; }
+  .feat .fd{ font-size:5.7mm; }
+
+  .grid .obj-list{ gap:6.5mm; }
+  .grid .obj-list li{ gap:5.5mm; font-size:8mm; line-height:1.38; }
+  .grid .obj-list li img{ width:9mm; height:9mm; }
+
+  .arch .anode{ gap:5mm; }
+  .arch .badge{ width:48mm; height:48mm; }
+  .arch .badge img{ width:27mm; height:27mm; }
+  .arch .alabel{ font-size:7.4mm; }
+  .arch .asub{ font-size:5.8mm; }
+  .arch .conn{ margin-top:19mm; font-size:14mm; }
+  .card.full > p[style]{ font-size:7.2mm !important; line-height:1.45; margin-top:12mm !important; }
+
+  .grid .tools{ gap:8mm; }
+  .tool{ gap:4mm; padding:7mm 4mm; }
+  .tool img{ width:25mm; height:25mm; }
+  .tool span{ font-size:6.7mm; }
+  .tool small{ font-size:5.2mm; }
+
+  .mtimeline{ gap:8mm; }
+  .mrow{ gap:7mm; }
+  .mrow .mbadge{ width:25mm; height:25mm; }
+  .mrow .mbadge img{ width:15mm; height:15mm; }
+  .mrow .mnum{ width:11mm; height:11mm; font-size:6mm; }
+  .mrow .mt{ font-size:7.9mm; }
+
+  .showcase{ gap:14mm; }
+  .sc-shots .shot-columns{ gap:11mm; }
+  .sc-shots .shots,
+  .sc-shots .webshots{ gap:10mm; }
+  .sc-shots .sub-label{ font-size:8mm; margin-bottom:7mm; }
+  .sc-shots .sub-label img{ width:9mm !important; height:9mm !important; }
+  .phone{ border-width:3mm; padding:2.5mm; border-radius:13mm; }
+  .phone .screen{ border-radius:9mm; }
+  .phone .screen .ph-txt{ font-size:5mm; }
+  .browser .bar{ height:8mm; padding:0 5mm; gap:2.5mm; }
+  .browser .bar i{ width:3.5mm; height:3.5mm; }
+  .browser .scr .ph-txt{ font-size:5.5mm; }
+  .sc-shots .shot .cap{ margin-top:5mm; }
+  .sc-shots .shot .cap b,
+  .sc-shots .webshot .cap b{ font-size:5.4mm !important; }
+  .sc-shots .shot .cap span,
+  .sc-shots .webshot .cap span{ font-size:4.6mm !important; line-height:1.3; }
+
+  .sc-people.people{ gap:16mm; }
+  .people-head{ font-size:13mm; margin-bottom:7mm; }
+  .sup{ gap:11mm 16mm; padding-top:5mm; }
+  .sup .person{ gap:5mm; }
+  .sup .person.top{ width:62%; }
+  .sup .person .ph{ width:38mm; height:38mm; font-size:5.4mm; }
+  .sup .person .nm{ font-size:8mm; }
+  .sup .person .rl{ font-size:6.3mm; }
+  .team{ gap:10mm; }
+  .member{ padding:8mm 5mm 7mm; border-radius:12mm; }
+  .member img{ width:46mm; height:46mm; }
+  .member .nm{ font-size:7.4mm; margin-top:5mm; }
+  .member .rl{ font-size:6.1mm; }
+  .member.lead{ min-height:150mm; padding:8mm 6mm; }
+  .member.lead .lead-badge{ font-size:5mm; padding:2mm 6mm; margin-bottom:6mm; }
+  .member.lead img{ width:68mm; height:94mm; margin-bottom:6mm; }
+  .member.lead .nm{ font-size:7.5mm; }
+  .member.lead .rl{ font-size:6.3mm; }
+
+  .footer{ padding-top:9mm; }
+  .footer .qr{ gap:10mm; }
+  .footer .qr img{ width:52mm; height:52mm; }
+  .footer .qr .qt b{ font-size:9.5mm; }
+  .footer .qr .qt span{ font-size:7.4mm; }
 
   /* ====================== EDIT TOOLBAR (screen only) ====================== */
   .toolbar{ position:fixed; top:0; left:0; right:0; z-index:9999;
@@ -778,6 +890,26 @@
 <script>
 (function () {
   var poster = document.getElementById('poster');
+  var mmProbe = document.createElement('span');
+  mmProbe.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:100mm;height:0;overflow:hidden;';
+  document.body.appendChild(mmProbe);
+  var pageSizeStyle = document.createElement('style');
+  pageSizeStyle.id = 'dynamic-page-size';
+  document.head.appendChild(pageSizeStyle);
+  var cropTimer = null;
+
+  function updatePosterPageSize() {
+    var pxPerMm = mmProbe.getBoundingClientRect().width / 100;
+    if (!pxPerMm) { return; }
+    var heightMm = Math.ceil((poster.scrollHeight / pxPerMm) + 2);
+    pageSizeStyle.textContent = '@page { size: 900mm ' + heightMm + 'mm; margin: 0; }';
+    poster.setAttribute('data-page-height-mm', heightMm);
+  }
+
+  function schedulePosterCrop() {
+    clearTimeout(cropTimer);
+    cropTimer = setTimeout(updatePosterPageSize, 80);
+  }
 
   /* ---------- shared: pick an image file from disk ---------- */
   function pickImage(cb) {
@@ -795,9 +927,10 @@
   }
   function bindImg(img, onSet) {
     img.classList.add('replaceable');
+    img.addEventListener('load', schedulePosterCrop);
     img.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
-      pickImage(function (url) { img.src = url; if (onSet) { onSet(url); } });
+      pickImage(function (url) { img.src = url; if (onSet) { onSet(url); } schedulePosterCrop(); });
     });
   }
   function bindBox(box, onSet) {
@@ -806,8 +939,9 @@
       e.preventDefault(); e.stopPropagation();
       pickImage(function (url) {
         box.innerHTML = '';
-        var im = document.createElement('img'); im.src = url; box.appendChild(im);
+        var im = document.createElement('img'); im.onload = schedulePosterCrop; im.src = url; box.appendChild(im);
         if (onSet) { onSet(url); }
+        schedulePosterCrop();
       });
     });
   }
@@ -839,8 +973,8 @@
   ];
 
   /* per-column size caps (mm) so few columns don't blow up, many stay tidy */
-  var phoneCap   = {1:115,2:115,3:112,4:96,5:80,6:67,7:58,8:50};
-  var browserCap = {1:230,2:215,3:185,4:150,5:128,6:110,7:96,8:84};
+  var phoneCap   = {1:165,2:150,3:135,4:120,5:102,6:90,7:82,8:74};
+  var browserCap = {1:260,2:235,3:200,4:165,5:140,6:120,7:106,8:96};
   function capFont(cols, big, mid, sm){ return cols>=7 ? sm : cols>=5 ? mid : big; }
 
   var cfg = {
@@ -914,6 +1048,7 @@
 
     bindShots();
     updateRowsReadout();
+    schedulePosterCrop();
   }
 
   /* make generated captions editable + screens replaceable */
@@ -993,6 +1128,16 @@
 
   /* first paint */
   renderShots();
+  poster.addEventListener('input', schedulePosterCrop);
+  window.addEventListener('load', schedulePosterCrop);
+  window.addEventListener('beforeprint', updatePosterPageSize);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(schedulePosterCrop);
+  }
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(schedulePosterCrop).observe(poster);
+  }
+  schedulePosterCrop();
 })();
 </script>
 </body>
