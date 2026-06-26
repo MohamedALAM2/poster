@@ -63,8 +63,8 @@
     overflow:hidden;
     padding:26mm 26mm 22mm;
     display:flex; flex-direction:column;
-    justify-content:space-between;
-    gap:9mm;
+    justify-content:flex-start;
+    gap:7mm;
   }
 
   /* thin brand frame */
@@ -150,14 +150,14 @@
   .stat .lbl{ font-size:5.6mm; font-weight:700; color:var(--muted); margin-top:3.5mm; text-transform:uppercase; letter-spacing:.3mm; }
 
   /* ====================== SECTION CARDS ====================== */
-  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
   .card{
     background:#fff; border:.6mm solid var(--line); border-radius:var(--radius);
-    padding:10mm 12mm; box-shadow:0 1.5mm 6mm rgba(13,27,42,.05);
+    padding:8mm 10mm; box-shadow:0 1.5mm 6mm rgba(13,27,42,.05);
   }
   .card.full{ grid-column:1 / -1; }
   /* distinctive section heading: a colored label/tab (square number + icon + title) */
-  .sec-head{ display:inline-flex; align-items:center; gap:5.5mm; margin:0 0 8mm;
+  .sec-head{ display:inline-flex; align-items:center; gap:5.5mm; margin:0 0 6mm;
     background:linear-gradient(135deg,var(--navy),#13456e);
     border-radius:9mm; padding:4.5mm 12mm 4.5mm 4.5mm;
     box-shadow:0 2mm 6mm rgba(11,42,74,.20); }
@@ -302,7 +302,7 @@
   /* ====================== ABSTRACT (highlight banner) ====================== */
   .abstract{ position:relative; overflow:hidden; color:#fff;
     background:linear-gradient(135deg,var(--navy),#10395f 55%,#0e4e74);
-    border-radius:var(--radius); padding:11mm 16mm 12mm; box-shadow:0 3mm 10mm rgba(11,42,74,.18); }
+    border-radius:var(--radius); padding:8mm 13mm 9mm; box-shadow:0 3mm 10mm rgba(11,42,74,.18); }
   .abstract::after{ content:""; position:absolute; right:-22mm; top:-22mm; width:95mm; height:95mm;
     background:radial-gradient(closest-side, rgba(0,167,196,.30), transparent); pointer-events:none; }
   .abstract .ab-head{ display:flex; align-items:center; gap:5mm; margin-bottom:5mm; }
