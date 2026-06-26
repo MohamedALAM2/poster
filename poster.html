@@ -44,7 +44,7 @@
     --gold:       #d99412;
     --red:        #d23a4a;
 
-    --radius:     14mm;
+    --radius:     20mm;
   }
 
   *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
@@ -61,6 +61,7 @@
     background:var(--bg);
     position:relative;
     overflow:hidden;
+    border-radius:var(--radius) var(--radius) 0 0;
     padding:28mm 28mm 24mm;
     display:flex; flex-direction:column;
     flex:0 0 auto;
