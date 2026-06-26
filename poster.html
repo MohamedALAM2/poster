@@ -243,9 +243,12 @@
   .sup{ display:flex; flex-direction:column; gap:8mm; }
   .sup .person{ display:flex; align-items:center; gap:7mm; background:var(--soft);
     border:.5mm solid var(--line); border-radius:11mm; padding:9mm 9mm; }
-  .sup .person .ph{ width:30mm; height:30mm; border-radius:50%; flex:none; object-fit:cover;
+  .sup .person .ph{ width:30mm; height:30mm; border-radius:50%; flex:none; object-fit:cover; overflow:hidden;
     background:#dde6f2; border:.9mm solid var(--blue); display:flex; align-items:center; justify-content:center;
-    color:var(--muted); font-size:4.6mm; font-weight:700; text-align:center; }
+    color:var(--muted); font-size:4.6mm; font-weight:700; text-align:center; line-height:1; }
+  .sup .person .ph img,
+  .sup .person img.ph{ width:100%; height:100%; max-width:100%; max-height:100%;
+    display:block; object-fit:cover; border-radius:inherit; }
   .sup .person .nm{ font-size:8mm; font-weight:900; color:var(--navy); }
   .sup .person .rl{ font-size:5.6mm; font-weight:700; color:var(--blue); margin-top:1.5mm; }
 
@@ -965,7 +968,10 @@
   poster.querySelectorAll(editable.join(',')).forEach(makeEditable);
   poster.querySelectorAll('.topbar img, .title .logo, .title .mascot, .qrbox img, .footer .qr img, .member img, .tool img, .abstract .ab-head img, .feat img, .arch .badge img, .mrow .mbadge img')
     .forEach(function (img) { bindImg(img); });
-  poster.querySelectorAll('.sup .person .ph').forEach(function (box) { bindBox(box); });
+  poster.querySelectorAll('.sup .person .ph').forEach(function (el) {
+    if (el.tagName && el.tagName.toLowerCase() === 'img') { bindImg(el); }
+    else { bindBox(el); }
+  });
 
   /* Reset */
   document.getElementById('resetBtn').addEventListener('click', function () {
