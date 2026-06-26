@@ -352,16 +352,17 @@
 
   /* ====================== PROBLEM / SOLUTION MINI CARDS ====================== */
   .mini-card{ display:flex; flex-direction:column; justify-content:flex-start; }
-  .mini-head{ display:inline-flex; align-items:center; gap:4mm; margin:0 0 4.5mm;
-    padding:3mm 9mm 3mm 3mm; border-radius:7mm; box-shadow:0 1.5mm 5mm rgba(11,42,74,.16); }
+  .mini-head{ display:inline-flex; align-items:center; gap:4mm; align-self:flex-start; width:auto;
+    max-width:max-content; margin:0 0 4.5mm; background:linear-gradient(135deg,var(--navy),#13456e);
+    padding:3mm 8mm 3mm 3mm; border-radius:7mm; box-shadow:0 1.5mm 5mm rgba(11,42,74,.16); }
   .mini-head .n{ width:11mm; height:11mm; border-radius:3mm; font-size:6mm; font-weight:900;
     display:flex; align-items:center; justify-content:center; flex:none; }
   .mini-head .ic{ width:11mm; height:11mm; border-radius:3mm; flex:none; background:rgba(255,255,255,.2);
     display:flex; align-items:center; justify-content:center; }
   .mini-head .ic img{ width:7mm; height:7mm; filter:brightness(0) invert(1); }
   .mini-head h3{ font-size:7.6mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
-  .mini-head.red{ background:linear-gradient(135deg,#9e2330,#d23a4a); }
-  .mini-head.green{ background:linear-gradient(135deg,#15713f,#1f9d57); }
+  .mini-head.red,
+  .mini-head.green{ background:linear-gradient(135deg,var(--navy),#13456e); }
   .mini-head.red .n{ background:#fff; color:var(--red); }
   .mini-head.green .n{ background:#fff; color:var(--green); }
   .mini-card p{ font-size:6mm; line-height:1.48; margin:0; }
