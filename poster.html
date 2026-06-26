@@ -594,6 +594,35 @@
   .footer .qr .qt b{ font-size:9.5mm; }
   .footer .qr .qt span{ font-size:7.4mm; }
 
+  /* Put every card title across the card border line, centered vertically on it. */
+  .card,
+  .abstract{
+    position:relative;
+    overflow:visible;
+  }
+  .card{
+    padding-top:23mm;
+  }
+  .abstract{
+    padding-top:23mm;
+  }
+  .mini-card{
+    padding-top:20mm;
+  }
+  .card > .sec-head,
+  .abstract > .sec-head,
+  .mini-card > .mini-head{
+    position:absolute;
+    top:0;
+    left:11mm;
+    margin:0;
+    z-index:2;
+    transform:translateY(-50%);
+  }
+  .abstract > .sec-head{
+    left:15mm;
+  }
+
   /* ====================== EDIT TOOLBAR (screen only) ====================== */
   .toolbar{ position:fixed; top:0; left:0; right:0; z-index:9999;
     background:var(--navy); color:#fff; font-family:"Segoe UI",Arial,sans-serif;
