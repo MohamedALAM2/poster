@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CrimeLens — Graduation Poster (90cm × 200cm)</title>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  CRIMELENS — GRADUATION POSTER                                         ║
+  ║  Size: 90 cm wide  ×  200 cm tall  (portrait banner)                   ║
+  ║                                                                        ║
+  ║  HOW TO EDIT (سهل جدًا):                                                ║
+  ║   • أي كلمة: دوّر على النص جوه الملف وغيّره على طول.                     ║
+  ║   • أي صورة: استبدل الملف في فولدر images/ بنفس الاسم.                   ║
+  ║   • سكرينشوتس النظام: حطّها في images/screens/ وعدّل قسم Screenshots.    ║
+  ║                                                                        ║
+  ║  HOW TO PRINT / EXPORT PDF:                                            ║
+  ║   1) افتح الملف في Google Chrome.                                       ║
+  ║   2) Ctrl + P  ←  اطبع.                                                  ║
+  ║   3) Destination: Save as PDF                                          ║
+  ║   4) More settings → Paper size: اختار "Custom" أو سيب الافتراضي،        ║
+  ║      Margins = None , Scale = Default , Background graphics = ✔ مفعّل.   ║
+  ║   5) سلّم الـ PDF لمطبعة البانر (90×200 سم).                            ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<style>
+  /* ============ PRINT PAGE SIZE: 90cm × 200cm ============ */
+  @page { size: 900mm 2000mm; margin: 0; }
+
+  :root{
+    --ink:        #0d1b2a;   /* main text */
+    --muted:      #51627a;   /* secondary text */
+    --line:       #dfe6f0;   /* card borders */
+    --bg:         #ffffff;   /* WHITE background (as requested) */
+    --soft:       #f4f8fd;   /* soft card fill */
+
+    --navy:       #0b2a4a;   /* brand dark navy */
+    --blue:       #1565d8;   /* primary blue */
+    --cyan:       #00a7c4;   /* accent cyan (from shield logo) */
+    --green:      #1f9d57;
+    --purple:     #6a3ec0;
+    --gold:       #d99412;
+    --red:        #d23a4a;
+
+    --radius:     14mm;
+  }
+
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#c9d3e0;                 /* gray only on screen, around the poster */
+    font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color:var(--ink);
+    display:flex; justify-content:center;
+  }
+
+  .poster{
+    width:900mm; height:2000mm;
+    background:var(--bg);
+    position:relative;
+    overflow:hidden;
+    padding:26mm 26mm 22mm;
+    display:flex; flex-direction:column;
+    justify-content:space-between;
+    gap:9mm;
+  }
+
+  /* thin brand frame */
+  .poster::before{
+    content:""; position:absolute; inset:9mm;
+    border:1.4mm solid var(--navy);
+    border-radius:10mm; pointer-events:none;
+  }
+  /* top color ribbon */
+  .poster::after{
+    content:""; position:absolute; top:9mm; left:9mm; right:9mm; height:5mm;
+    background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan));
+    border-radius:10mm 10mm 0 0; pointer-events:none;
+  }
+
+  /* ====================== HEADER ====================== */
+  .topbar{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:10mm;
+    padding-bottom:5mm;
+  }
+  .topbar .logo-ribbon{
+    position:relative; top:-17mm; width:58mm; min-height:84mm; flex:none;
+    display:flex; align-items:center; justify-content:center;
+    background:#12395b;
+    border:.8mm solid #1d6087; border-radius:0 0 4mm 4mm;
+    padding:20mm 6mm 12mm;
+    box-shadow:0 2mm 7mm rgba(13,27,42,.18);
+  }
+  .topbar .logo-ribbon::before{
+    content:""; position:absolute; inset:2.4mm;
+    background:#12395b;
+    border:.45mm solid rgba(255,255,255,.18); border-radius:0 0 2.5mm 2.5mm;
+    pointer-events:none;
+  }
+  .topbar .logo-ribbon::after{
+    content:""; position:absolute; left:0; bottom:-15mm;
+    width:33mm; height:16mm;
+    background:#12395b;
+    clip-path:polygon(0 0, 100% 0, 100% 100%);
+    filter:drop-shadow(0 1.3mm 1mm rgba(13,27,42,.16));
+  }
+  .topbar .logo-ribbon.uni{ border-top:3mm solid var(--blue); }
+  .topbar .logo-ribbon.fac{ border-top:3mm solid var(--cyan); }
+  .topbar .logo-ribbon.fac::after{
+    left:auto; right:0;
+    clip-path:polygon(0 0, 100% 0, 0 100%);
+  }
+  .topbar .logo-ribbon img{
+    position:relative; z-index:1; max-height:43mm; max-width:44mm; width:auto; object-fit:contain;
+  }
+  .topbar .uni-text{ flex:1; text-align:center; line-height:1.28; padding-top:18mm; }
+  .topbar .uni-text .u3{ font-size:9mm; font-weight:800; color:var(--navy); letter-spacing:.2mm; }
+
+  /* ====================== TITLE ====================== */
+  .title{
+    display:flex; align-items:center; gap:12mm;
+    background:linear-gradient(135deg,var(--navy),#10395f 60%,#0e4e74);
+    border-radius:var(--radius);
+    padding:13mm 20mm; color:#fff;
+    box-shadow:0 3mm 10mm rgba(11,42,74,.18);
+  }
+  .title .logo{ height:58mm; width:58mm; object-fit:contain; flex:none;
+    filter:drop-shadow(0 2mm 5mm rgba(0,0,0,.28)); }
+  .title h1{ font-size:38mm; line-height:.98; margin:0; font-weight:900; letter-spacing:-0.5mm; }
+  .title h1 .lens{ color:var(--cyan); }
+  .title .sub{ font-size:10.5mm; font-weight:600; color:#cfe6f5; margin-top:4mm; }
+  .title .tags{ margin-top:6.5mm; display:flex; gap:4.5mm; flex-wrap:wrap; }
+  .title .tag{ font-size:5.8mm; font-weight:700; background:rgba(255,255,255,.12);
+    border:.4mm solid rgba(255,255,255,.35); padding:2.8mm 6mm; border-radius:20mm; }
+  .title .head-txt{ flex:1; }
+  .title .qrbox{ margin-left:auto; flex:none; text-align:center; }
+  .title .qrbox img{ width:56mm; height:56mm; background:#fff; border-radius:9mm;
+    padding:3.5mm; display:block; }
+  .title .qrbox span{ display:block; font-size:5mm; font-weight:700; color:#cfe6f5; margin-top:3mm; }
+
+  /* ====================== STATS STRIP ====================== */
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:8mm; }
+  .stat{ background:var(--soft); border:.5mm solid var(--line); border-radius:11mm;
+    padding:9mm 4mm; text-align:center; }
+  .stat .num{ font-size:21mm; font-weight:900; color:var(--blue); line-height:1; }
+  .stat .num.c{ color:var(--cyan); } .stat .num.g{ color:var(--green); } .stat .num.p{ color:var(--purple); }
+  .stat .lbl{ font-size:5.6mm; font-weight:700; color:var(--muted); margin-top:3.5mm; text-transform:uppercase; letter-spacing:.3mm; }
+
+  /* ====================== SECTION CARDS ====================== */
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; }
+  .card{
+    background:#fff; border:.6mm solid var(--line); border-radius:var(--radius);
+    padding:10mm 12mm; box-shadow:0 1.5mm 6mm rgba(13,27,42,.05);
+  }
+  .card.full{ grid-column:1 / -1; }
+  /* distinctive section heading: a colored label/tab (square number + icon + title) */
+  .sec-head{ display:inline-flex; align-items:center; gap:5.5mm; margin:0 0 8mm;
+    background:linear-gradient(135deg,var(--navy),#13456e);
+    border-radius:9mm; padding:4.5mm 12mm 4.5mm 4.5mm;
+    box-shadow:0 2mm 6mm rgba(11,42,74,.20); }
+  .sec-head .n{ font-size:7.5mm; font-weight:900; color:#fff; background:var(--blue);
+    width:15mm; height:15mm; border-radius:3.5mm;   /* SQUARE marker, same blue */
+    display:flex; align-items:center; justify-content:center; flex:none; }
+  .sec-head .ic{ width:15mm; height:15mm; border-radius:4mm; flex:none;
+    display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.16); }
+  .sec-head .ic img{ width:10mm; height:10mm; object-fit:contain; filter:brightness(0) invert(1); }
+  .sec-head h2{ font-size:10.5mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
+  .card p{ font-size:6.7mm; line-height:1.55; color:var(--ink); margin:0; }
+
+  .obj-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5.5mm; }
+  .obj-list li{ display:flex; gap:5.5mm; align-items:flex-start; font-size:7mm; line-height:1.45; }
+  .obj-list li img{ width:9mm; height:9mm; margin-top:1mm; flex:none; }
+
+  /* ====================== ARCHITECTURE FLOW ====================== */
+  .flow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:0; justify-content:center; }
+  .node{ flex:1 1 26%; min-width:0; text-align:center; background:var(--soft);
+    border:.6mm solid var(--line); border-top:3mm solid var(--blue); border-radius:9mm;
+    padding:11mm 4mm; margin:4mm; display:flex; flex-direction:column; align-items:center; gap:4mm; }
+  .node img{ width:19mm; height:19mm; object-fit:contain; }
+  .node .t{ font-size:6.4mm; font-weight:800; color:var(--navy); line-height:1.15; }
+  .node.c{ border-top-color:var(--cyan); } .node.g{ border-top-color:var(--green); }
+  .node.p{ border-top-color:var(--purple); } .node.r{ border-top-color:var(--red); }
+  .node.gd{ border-top-color:var(--gold); }
+  .arrow{ display:flex; align-items:center; font-size:13mm; color:var(--blue); font-weight:900; padding:0 1mm; }
+
+  /* ====================== METHODOLOGY TIMELINE ====================== */
+  .steps{ display:grid; grid-template-columns:1fr 1fr; gap:6mm 14mm; }
+  .step{ display:flex; gap:6.5mm; align-items:flex-start; }
+  .step .k{ width:16mm; height:16mm; flex:none; border-radius:50%; background:var(--cyan); color:#fff;
+    font-size:7.5mm; font-weight:900; display:flex; align-items:center; justify-content:center; }
+  .step .body .st{ font-size:7mm; font-weight:800; color:var(--navy); }
+  .step .body .sd{ font-size:6mm; color:var(--muted); line-height:1.4; margin-top:1.5mm; }
+
+  /* ====================== TOOLS & TECHNOLOGIES (brand logos) ====================== */
+  .tools{ display:grid; grid-template-columns:repeat(6,1fr); gap:7mm; }
+  .tool{ display:flex; flex-direction:column; align-items:center; gap:3mm; background:var(--soft);
+    border:.5mm solid var(--line); border-radius:10mm; padding:5mm 3mm; }
+  .tool img{ width:19mm; height:19mm; object-fit:contain; }
+  .tool span{ font-size:4.8mm; font-weight:800; color:var(--navy); text-align:center; line-height:1.1; }
+  .tool small{ font-size:3.8mm; color:var(--muted); }
+
+  /* ====================== SCREENSHOTS (single row of phone mockups) ====================== */
+  .shots{ display:grid; grid-template-columns:repeat(7,1fr); gap:6mm; align-items:start; }
+  .shot{ text-align:center; }
+  .phone{ position:relative; border:2.4mm solid #16273f; border-radius:11mm; background:#16273f;
+    padding:2mm; box-shadow:0 2.5mm 8mm rgba(13,27,42,.22); }
+  .phone::before{ content:""; position:absolute; top:2.4mm; left:50%; transform:translateX(-50%);
+    width:20mm; height:3mm; background:#16273f; border-radius:0 0 4mm 4mm; z-index:2; }
+  /* contain = full screenshot shown, never cropped top/bottom; dark fill blends any letterbox */
+  .phone .screen{ width:100%; aspect-ratio:9/19.5; border-radius:8mm; overflow:hidden;
+    display:flex; align-items:center; justify-content:center; background:#0f1c2e; }
+  .phone .screen img{ width:100%; height:100%; object-fit:contain; }
+  .phone .screen .ph-txt{ font-size:3.3mm; font-weight:700; color:#8298b6; padding:4mm; line-height:1.3; }
+  .shot .cap{ margin-top:5mm; }
+  .shot .cap b{ font-size:4.6mm; color:var(--navy); }
+  .shot .cap span{ display:block; font-size:3.7mm; color:var(--muted); margin-top:1.2mm; line-height:1.3; }
+
+  .sub-label{ display:flex; align-items:center; gap:4mm; font-size:6mm; font-weight:800; color:var(--blue);
+    margin:2mm 0 6mm; }
+  .sub-label::after{ content:""; flex:1; height:.5mm; background:var(--line); }
+
+  /* web (desktop) screenshots row */
+  .webshots{ display:grid; grid-template-columns:repeat(4,1fr); gap:8mm; }
+  .webshot{ text-align:center; }
+  .browser{ border:.6mm solid var(--line); border-radius:7mm; overflow:hidden; background:#fff;
+    box-shadow:0 2.5mm 8mm rgba(13,27,42,.12); }
+  .browser .bar{ height:10mm; background:#eef2f8; border-bottom:.5mm solid var(--line);
+    display:flex; align-items:center; gap:3mm; padding:0 6mm; }
+  .browser .bar i{ width:4mm; height:4mm; border-radius:50%; background:#cdd6e3; }
+  .browser .bar i.r{ background:#f0a0a8; } .browser .bar i.y{ background:#f2cf86; } .browser .bar i.g{ background:#a7d8b6; }
+  .browser .scr{ aspect-ratio:16/10; display:flex; align-items:center; justify-content:center;
+    background:repeating-linear-gradient(45deg,#eef3fa,#eef3fa 12mm,#e6edf6 12mm,#e6edf6 24mm); }
+  .browser .scr img{ width:100%; height:100%; object-fit:cover; }
+  .browser .scr .ph-txt{ font-size:4.4mm; font-weight:700; color:var(--muted); }
+  .webshot .cap{ margin-top:5mm; }
+  .webshot .cap b{ font-size:4.8mm; color:var(--navy); }
+  .webshot .cap span{ display:block; font-size:3.9mm; color:var(--muted); margin-top:1.2mm; }
+
+  /* ====================== PEOPLE ====================== */
+  .people{ display:grid; grid-template-columns:1fr 1.55fr; gap:10mm; align-items:stretch; }
+  .sup{ display:flex; flex-direction:column; gap:8mm; }
+  .sup .person{ display:flex; align-items:center; gap:7mm; background:var(--soft);
+    border:.5mm solid var(--line); border-radius:11mm; padding:9mm 9mm; }
+  .sup .person .ph{ width:30mm; height:30mm; border-radius:50%; flex:none; object-fit:cover;
+    background:#dde6f2; border:.9mm solid var(--blue); display:flex; align-items:center; justify-content:center;
+    color:var(--muted); font-size:4.6mm; font-weight:700; text-align:center; }
+  .sup .person .nm{ font-size:8mm; font-weight:900; color:var(--navy); }
+  .sup .person .rl{ font-size:5.6mm; font-weight:700; color:var(--blue); margin-top:1.5mm; }
+
+  .team{ display:grid; grid-template-columns:repeat(4,1fr); gap:7mm; }
+  .member{ text-align:center; background:#fff; border:.5mm solid var(--line); border-radius:10mm; padding:8mm 3mm 7mm; }
+  .member img{ width:38mm; height:38mm; border-radius:50%; object-fit:cover; border:1.2mm solid var(--cyan); }
+  .member .nm{ font-size:5.6mm; font-weight:800; color:var(--navy); margin-top:4mm; line-height:1.2; }
+  .member .rl{ font-size:4.8mm; color:var(--muted); margin-top:1.5mm; }
+
+  /* featured team lead: tall photo spanning both rows in the first column */
+  .member.lead{ grid-row:span 2; display:flex; flex-direction:column; align-items:center;
+    background:var(--soft); border:.9mm solid var(--cyan); padding:7mm 5mm; }
+  .member.lead .lead-badge{ font-size:4mm; font-weight:800; letter-spacing:.3mm; color:#fff;
+    background:var(--cyan); border-radius:20mm; padding:1.6mm 5mm; margin-bottom:4mm; }
+  .member.lead img{ width:100%; flex:1; min-height:80mm; border-radius:11mm;
+    object-fit:cover; border:1.4mm solid var(--cyan); margin:0 0 5mm; }
+  .member.lead .nm{ font-size:6mm; margin-top:0; }
+  .member.lead .rl{ font-size:5mm; font-weight:700; color:var(--blue); }
+
+  .people-head{ font-size:9mm; font-weight:900; color:var(--navy); margin:0 0 3mm; }
+
+  /* ====================== BOTTOM SHOWCASE (screenshots = side box on the right) ====================== */
+  .showcase{ display:grid; grid-template-columns:1fr 1fr; gap:8mm;
+    grid-template-areas:"people shots"; align-items:start; }
+  .sc-people{ grid-area:people; }
+  .sc-shots{ grid-area:shots; }
+  .sc-people.people{ grid-template-columns:1fr; gap:9mm; }       /* stack supervisors over the team */
+  .sc-shots .shots{ display:grid; gap:5mm; justify-items:center; align-items:start; }   /* columns set live by JS */
+  .sc-shots .shot{ width:100%; }
+  .sc-shots .shot .cap{ margin-top:3.5mm; }
+  .sc-shots .shot .cap b{ font-size:4mm; }
+  .sc-shots .shot .cap span{ font-size:3.3mm; }
+  .sc-shots .webshots{ display:grid; gap:5mm; justify-items:center; align-items:start; }   /* columns set live by JS */
+  .sc-shots .webshot{ width:100%; }
+  .sc-shots .browser{ border-radius:5mm; }
+  .sc-shots .browser .scr{ aspect-ratio:16/10; }
+  .sc-shots .browser .bar{ height:5mm; padding:0 3mm; gap:1.5mm; }
+  .sc-shots .browser .bar i{ width:2.2mm; height:2.2mm; }
+  .sc-shots .webshot .cap{ margin-top:3mm; }
+  .sc-shots .webshot .cap b{ font-size:3.7mm; }
+  .sc-shots .webshot .cap span{ font-size:3.1mm; line-height:1.25; }
+  .sc-shots .sub-label{ margin-bottom:4mm; }
+
+  /* ====================== ABSTRACT (highlight banner) ====================== */
+  .abstract{ position:relative; overflow:hidden; color:#fff;
+    background:linear-gradient(135deg,var(--navy),#10395f 55%,#0e4e74);
+    border-radius:var(--radius); padding:11mm 16mm 12mm; box-shadow:0 3mm 10mm rgba(11,42,74,.18); }
+  .abstract::after{ content:""; position:absolute; right:-22mm; top:-22mm; width:95mm; height:95mm;
+    background:radial-gradient(closest-side, rgba(0,167,196,.30), transparent); pointer-events:none; }
+  .abstract .ab-head{ display:flex; align-items:center; gap:5mm; margin-bottom:5mm; }
+  .abstract .ab-head .ic{ width:15mm; height:15mm; border-radius:4mm; flex:none;
+    background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center; }
+  .abstract .ab-head .ic img{ width:10mm; height:10mm; }
+  .abstract .ab-head h2{ font-size:11mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
+  .abstract p{ margin:0; font-size:6.8mm; line-height:1.5; color:#eaf3fb; position:relative; z-index:1; }
+  .abstract p b{ color:#fff; }
+
+  /* ====================== PROBLEM / SOLUTION accent tabs ====================== */
+  .sec-head.red{ background:linear-gradient(135deg,#9e2330,#d23a4a); }
+  .sec-head.green{ background:linear-gradient(135deg,#15713f,#1f9d57); }
+  .sec-head.red .n{ background:#fff; color:var(--red); }
+  .sec-head.green .n{ background:#fff; color:var(--green); }
+
+  /* ====================== SYSTEM ARCHITECTURE (connected icon pipeline) ====================== */
+  .arch{ display:flex; align-items:flex-start; justify-content:space-between; gap:0; }
+  .arch .anode{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; gap:4mm; text-align:center; }
+  .arch .badge{ position:relative; width:38mm; height:38mm; border-radius:50%; background:#fff;
+    border:1mm solid var(--line); box-shadow:0 2mm 7mm rgba(13,27,42,.10);
+    display:flex; align-items:center; justify-content:center; }
+  .arch .badge::after{ content:""; position:absolute; inset:-2.6mm; border-radius:50%;
+    border:.8mm dashed rgba(21,101,216,.35); }
+  .arch .badge img{ width:21mm; height:21mm; object-fit:contain; }
+  .arch .alabel{ font-size:5.4mm; font-weight:800; color:var(--navy); line-height:1.15; }
+  .arch .asub{ font-size:4.2mm; color:var(--muted); line-height:1.2; }
+  .arch .conn{ flex:0 0 auto; align-self:flex-start; margin-top:15mm; font-size:11mm; font-weight:900;
+    color:var(--blue); padding:0 1mm; }
+
+  /* ====================== WORKFLOW (numbered icon flow) ====================== */
+  .wflow{ display:flex; align-items:flex-start; justify-content:space-between; gap:0; }
+  .wstep{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; text-align:center; gap:3mm; }
+  .wstep .wbadge{ position:relative; width:32mm; height:32mm; border-radius:50%; background:var(--soft);
+    border:.9mm solid var(--blue); display:flex; align-items:center; justify-content:center; }
+  .wstep .wbadge img{ width:18mm; height:18mm; object-fit:contain; }
+  .wstep .wnum{ position:absolute; top:-3mm; right:-3mm; width:12mm; height:12mm; border-radius:50%;
+    background:var(--blue); color:#fff; font-size:6mm; font-weight:900; border:1mm solid #fff;
+    display:flex; align-items:center; justify-content:center; }
+  .wstep .wt{ font-size:5mm; font-weight:800; color:var(--navy); line-height:1.18; }
+  .warrow{ flex:0 0 auto; align-self:flex-start; margin-top:12mm; color:var(--blue); font-size:9mm;
+    font-weight:900; padding:0 .5mm; }
+
+  /* ====================== TITLE AI MASCOT ====================== */
+  .title .mascot{ width:55mm; height:55mm; object-fit:contain; flex:none;
+    filter:drop-shadow(0 2.5mm 6mm rgba(0,0,0,.30)); }
+
+  /* ====================== COMBINED PROBLEM + SOLUTION CARD ====================== */
+  .ps-card .blk + .blk{ margin-top:9mm; }
+  .mini-head{ display:inline-flex; align-items:center; gap:4mm; margin:0 0 4.5mm;
+    padding:3mm 9mm 3mm 3mm; border-radius:7mm; box-shadow:0 1.5mm 5mm rgba(11,42,74,.16); }
+  .mini-head .n{ width:11mm; height:11mm; border-radius:3mm; font-size:6mm; font-weight:900;
+    display:flex; align-items:center; justify-content:center; flex:none; }
+  .mini-head .ic{ width:11mm; height:11mm; border-radius:3mm; flex:none; background:rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center; }
+  .mini-head .ic img{ width:7mm; height:7mm; filter:brightness(0) invert(1); }
+  .mini-head h3{ font-size:7.6mm; margin:0; font-weight:900; color:#fff; letter-spacing:.2mm; }
+  .mini-head.red{ background:linear-gradient(135deg,#9e2330,#d23a4a); }
+  .mini-head.green{ background:linear-gradient(135deg,#15713f,#1f9d57); }
+  .mini-head.red .n{ background:#fff; color:var(--red); }
+  .mini-head.green .n{ background:#fff; color:var(--green); }
+  .ps-card p{ font-size:6mm; line-height:1.48; margin:0; }
+
+  /* ====================== KEY FEATURES ====================== */
+  .feats{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .feat{ display:flex; align-items:center; gap:5mm; background:var(--soft);
+    border:.5mm solid var(--line); border-radius:9mm; padding:6mm 5mm; }
+  .feat img{ width:16mm; height:16mm; object-fit:contain; flex:none; }
+  .feat .ft{ font-size:5.4mm; font-weight:800; color:var(--navy); line-height:1.15; }
+  .feat .fd{ font-size:4mm; color:var(--muted); margin-top:1mm; line-height:1.2; }
+
+  /* ====================== METHODOLOGY (vertical timeline inside narrow card) ====================== */
+  .mtimeline{ display:flex; flex-direction:column; gap:5.5mm; }
+  .mrow{ display:flex; align-items:center; gap:5mm; }
+  .mrow .mbadge{ position:relative; width:19mm; height:19mm; border-radius:50%; background:var(--soft);
+    border:.8mm solid var(--blue); display:flex; align-items:center; justify-content:center; flex:none; }
+  .mrow .mbadge img{ width:11mm; height:11mm; object-fit:contain; }
+  .mrow .mnum{ position:absolute; top:-2.5mm; right:-2.5mm; width:9mm; height:9mm; border-radius:50%;
+    background:var(--blue); color:#fff; font-size:5mm; font-weight:900; border:.7mm solid #fff;
+    display:flex; align-items:center; justify-content:center; }
+  .mrow .mt{ font-size:5.6mm; font-weight:800; color:var(--navy); line-height:1.2; }
+
+  /* tools grid when placed in the narrow Tools|Methodology row */
+  .grid .tools{ grid-template-columns:repeat(3,1fr); gap:6mm; }
+
+  /* ====================== FOOTER ====================== */
+  .footer{ display:flex; align-items:center; justify-content:space-between; gap:10mm;
+    border-top:.8mm solid var(--line); padding-top:9mm; margin-top:1mm; }
+  .footer .qr{ display:flex; align-items:center; gap:7mm; }
+  .footer .qr img{ width:40mm; height:40mm; border:.6mm solid var(--line); border-radius:5mm; padding:1.5mm; background:#fff; }
+  .footer .qr .qt b{ font-size:6.8mm; color:var(--navy); }
+  .footer .qr .qt span{ display:block; font-size:5.6mm; color:var(--muted); margin-top:1.2mm; }
+  .footer .meta{ text-align:right; font-size:6mm; color:var(--muted); line-height:1.6; }
+  .footer .meta b{ color:var(--navy); }
+
+  /* ====================== EDIT TOOLBAR (screen only) ====================== */
+  .toolbar{ position:fixed; top:0; left:0; right:0; z-index:9999;
+    background:var(--navy); color:#fff; font-family:"Segoe UI",Arial,sans-serif;
+    box-shadow:0 2px 10px rgba(0,0,0,.25); }
+  .toolbar .tb-row{ display:flex; align-items:center; justify-content:space-between; padding:10px 20px; }
+  .toolbar .tb-title{ font-weight:800; font-size:16px; }
+  .toolbar .tb-title span{ display:block; font-weight:400; opacity:.82; font-size:12px; margin-top:2px; }
+  .toolbar .tb-actions button{ background:#fff; color:var(--navy); border:0; border-radius:9px;
+    padding:9px 15px; font-weight:700; cursor:pointer; margin-left:8px; font-size:13.5px; }
+  .toolbar .tb-actions button:hover{ background:var(--cyan); color:#fff; }
+  .toolbar .tb-actions #layoutToggle.active{ background:var(--cyan); color:#fff; }
+
+  /* layout control panel */
+  .tb-panel{ display:none; align-items:center; flex-wrap:wrap; gap:14px;
+    padding:11px 20px; background:#08213b; border-top:1px solid rgba(255,255,255,.12); }
+  .tb-panel.open{ display:flex; }
+  .tb-grp{ display:flex; align-items:center; gap:10px; }
+  .tb-grp-ttl{ font-weight:800; font-size:13.5px; }
+  .tb-panel label{ display:flex; align-items:center; gap:6px; font-size:12.5px; opacity:.92; }
+  .tb-panel select{ background:#fff; color:var(--navy); border:0; border-radius:7px;
+    padding:6px 9px; font-weight:700; font-size:13px; cursor:pointer; }
+  .tb-rows{ font-size:12px; font-weight:700; color:var(--cyan); min-width:48px; }
+  .tb-sep{ width:1px; height:26px; background:rgba(255,255,255,.18); }
+  .tb-hint{ font-size:11.5px; opacity:.7; margin-left:auto; }
+
+  @media screen{ body{ padding-top:66px; } }
+
+  /* show a soft highlight on editable fields while editing on screen */
+  @media screen{
+    [contenteditable="true"]:hover{ outline:1.5px dashed rgba(21,101,216,.45); outline-offset:2px; border-radius:3px; }
+    [contenteditable="true"]:focus{ outline:2px solid var(--blue); outline-offset:2px; background:rgba(21,101,216,.06); }
+    .replaceable{ cursor:pointer; }
+    .replaceable:hover{ outline:2px dashed var(--cyan); outline-offset:3px; }
+  }
+  @media print{
+    .toolbar{ display:none !important; }
+    body{ padding-top:0 !important; background:#fff !important; }
+    [contenteditable]{ outline:none !important; background:none !important; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ===================== EDIT TOOLBAR (لا يظهر عند الطباعة) ===================== -->
+<div class="toolbar">
+  <div class="tb-row">
+    <div class="tb-title">CrimeLens — Editable Poster
+      <span>اضغط على أي نص لتعديله · اضغط على أي صورة (لوجو / صورة شخص / شاشة) لاستبدالها</span>
+    </div>
+    <div class="tb-actions">
+      <button id="layoutToggle">🧩 Screenshots Layout</button>
+      <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <button id="resetBtn">↺ Reset</button>
+    </div>
+  </div>
+
+  <!-- لوحة تحكم الاسكرينات: حدد عدد الصور وعدد الأعمدة لكل قسم (الأقصى 8) -->
+  <div class="tb-panel" id="layoutPanel">
+    <div class="tb-grp">
+      <span class="tb-grp-ttl">📱 Mobile</span>
+      <label>Images
+        <select id="mobCount"></select>
+      </label>
+      <label>Per row
+        <select id="mobCols"></select>
+      </label>
+      <span class="tb-rows" id="mobRows">2 rows</span>
+    </div>
+
+    <div class="tb-sep"></div>
+
+    <div class="tb-grp">
+      <span class="tb-grp-ttl">💻 Web</span>
+      <label>Images
+        <select id="webCount"></select>
+      </label>
+      <label>Per row
+        <select id="webCols"></select>
+      </label>
+      <span class="tb-rows" id="webRows">2 rows</span>
+    </div>
+
+    <span class="tb-hint">الحد الأقصى 8 صور لكل قسم · التصميم بيتظبط تلقائيًا</span>
+  </div>
+</div>
+
+<div class="poster" id="poster">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="topbar">
+    <div class="logo-ribbon uni">
+      <img src="images/logo-university-clean.png" alt="Beni-Suef University" />
+    </div>
+    <div class="uni-text">
+      <div class="u3">Graduation Project · Academic Year 2025 / 2026</div>
+    </div>
+    <div class="logo-ribbon fac">
+      <img src="images/logo-faculty-clean.png" alt="Faculty of Computers and AI" />
+    </div>
+  </header>
+
+  <!-- ===================== TITLE ===================== -->
+  <section class="title">
+    <img class="logo" src="images/logo-crimelens2.png" alt="CrimeLens logo" />
+    <div class="head-txt">
+      <h1>Crime<span class="lens">Lens</span></h1>
+      <div class="sub">AI-Powered Crime Detection &amp; Smart Surveillance System</div>
+      <div class="tags">
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Real-Time Video Analysis</span>
+        <span class="tag">Smart Alerts</span>
+        <span class="tag">Security Dashboard</span>
+      </div>
+    </div>
+    <div class="qrbox">
+      <img src="images/qr.png" alt="Project QR" />
+      <span>Scan for demo &amp; docs</span>
+    </div>
+  </section>
+
+  <!-- ===================== ABSTRACT (highlight banner) ===================== -->
+  <section class="abstract">
+    <div class="ab-head">
+      <div class="ic"><img src="https://api.iconify.design/flat-color-icons/document.svg" alt=""></div>
+      <h2>Abstract</h2>
+    </div>
+    <p><b>CrimeLens</b> is an AI-powered surveillance platform that analyzes live and recorded camera feeds using
+       <b>Computer Vision</b> and <b>deep-learning</b> models to automatically detect suspicious and criminal
+       activity in real time. The system scores each event by priority, raises instant alerts, and presents them
+       to security teams through connected <b>web</b> and <b>mobile</b> dashboards — replacing continuous manual
+       monitoring with a scalable, AI-driven workflow while keeping a human in control of every critical decision.</p>
+  </section>
+
+  <!-- ===================== 01. INTRODUCTION (general background — not the project) ===================== -->
+  <section class="card full">
+    <div class="sec-head">
+      <span class="n">01</span>
+      <div class="ic"><img src="images/icons/flag.png" alt=""></div>
+      <h2>Introduction</h2>
+    </div>
+    <p>Surveillance cameras have become a core part of modern security infrastructure across cities, facilities,
+       and public spaces. Yet the volume of video they generate far exceeds what human operators can watch
+       effectively — studies show that attention and detection accuracy drop sharply after only a short period of
+       continuous monitoring, so important incidents are often missed or noticed too late. The rapid progress of
+       <b>Artificial Intelligence</b> and <b>Computer Vision</b> now makes it possible to analyze video streams
+       automatically and recognize abnormal or criminal behaviour as it happens, creating a strong need for
+       intelligent systems that support security teams instead of relying on manual watching alone.</p>
+  </section>
+
+  <!-- ===================== 02+03 PROBLEM & SOLUTION (one card)  |  04 KEY FEATURES ===================== -->
+  <div class="grid">
+
+    <!-- 02 + 03 : Problem Statement + Our Professional Solution (stacked in one card) -->
+    <section class="card ps-card">
+      <div class="blk">
+        <div class="mini-head red"><span class="n">02</span><h3>Problem Statement</h3></div>
+        <p>Traditional surveillance systems mainly depend on human operators to monitor camera feeds continuously.
+           This is time-consuming, error-prone, and may lead to delayed response when suspicious or criminal
+           activities happen. In crowded or sensitive areas, it becomes difficult to detect incidents quickly and
+           accurately using manual monitoring only.</p>
+      </div>
+      <div class="blk">
+        <div class="mini-head green"><span class="n">03</span><h3>Our Professional Solution</h3></div>
+        <p><b>CrimeLens</b> uses Artificial Intelligence and Computer Vision to analyze video streams and detect
+           suspicious or criminal behaviours automatically. It processes camera input, identifies potential threats,
+           and generates real-time, priority-scored alerts — turning hours of manual monitoring into instant,
+           actionable insight for security teams.</p>
+      </div>
+    </section>
+
+    <!-- 04 KEY FEATURES (AI icons fetched live from the web) -->
+    <section class="card">
+      <div class="sec-head">
+        <span class="n">04</span>
+        <div class="ic"><img src="images/icons/ai.png" alt=""></div>
+        <h2>Key Features</h2>
+      </div>
+      <div class="feats">
+        <div class="feat"><img src="https://api.iconify.design/fluent-emoji-flat/robot.svg" alt="">
+          <div><div class="ft">AI Detection</div><div class="fd">Deep-learning models</div></div></div>
+        <div class="feat"><img src="https://api.iconify.design/flat-color-icons/binoculars.svg" alt="">
+          <div><div class="ft">Computer Vision</div><div class="fd">Frame-by-frame analysis</div></div></div>
+        <div class="feat"><img src="https://api.iconify.design/flat-color-icons/clock.svg" alt="">
+          <div><div class="ft">Real-Time</div><div class="fd">Live video processing</div></div></div>
+        <div class="feat"><img src="https://api.iconify.design/flat-color-icons/high-priority.svg" alt="">
+          <div><div class="ft">Smart Alerts</div><div class="fd">Priority-scored events</div></div></div>
+        <div class="feat"><img src="https://api.iconify.design/flat-color-icons/multiple-devices.svg" alt="">
+          <div><div class="ft">Web &amp; Mobile</div><div class="fd">Connected dashboards</div></div></div>
+        <div class="feat"><img src="https://api.iconify.design/flat-color-icons/conference-call.svg" alt="">
+          <div><div class="ft">Human-in-Loop</div><div class="fd">Operator stays in control</div></div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== 05. PROJECT OBJECTIVES ===================== -->
+  <section class="card full">
+    <div class="sec-head">
+      <span class="n">05</span>
+      <div class="ic"><img src="images/icons/target.png" alt=""></div>
+      <h2>Project Objectives</h2>
+    </div>
+    <ul class="obj-list">
+      <li><img src="images/icons/check.png" alt="">Develop an AI-powered surveillance system for detecting suspicious activities.</li>
+      <li><img src="images/icons/check.png" alt="">Reduce the dependency on manual camera monitoring.</li>
+      <li><img src="images/icons/check.png" alt="">Improve the speed of detecting and responding to criminal events.</li>
+      <li><img src="images/icons/check.png" alt="">Provide a smart interface for viewing alerts and system outputs.</li>
+      <li><img src="images/icons/check.png" alt="">Support real-time video analysis using Computer Vision techniques.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 06. SYSTEM ARCHITECTURE ===================== -->
+  <section class="card full">
+    <div class="sec-head">
+      <span class="n">06</span>
+      <div class="ic"><img src="images/icons/network.png" alt=""></div>
+      <h2>System Architecture</h2>
+    </div>
+    <!-- connected pipeline · icons fetched live from Iconify (flat-color-icons) -->
+    <div class="arch">
+      <div class="anode">
+        <div class="badge"><img src="https://api.iconify.design/flat-color-icons/camera.svg" alt=""></div>
+        <div class="alabel">Camera Input</div><div class="asub">Live / recorded feeds</div>
+      </div>
+      <div class="conn">→</div>
+      <div class="anode">
+        <div class="badge"><img src="https://api.iconify.design/flat-color-icons/film-reel.svg" alt=""></div>
+        <div class="alabel">Video Processing</div><div class="asub">Frame extraction</div>
+      </div>
+      <div class="conn">→</div>
+      <div class="anode">
+        <div class="badge"><img src="https://api.iconify.design/flat-color-icons/electronics.svg" alt=""></div>
+        <div class="alabel">AI Detection Model</div><div class="asub">Deep-learning inference</div>
+      </div>
+      <div class="conn">→</div>
+      <div class="anode">
+        <div class="badge"><img src="https://api.iconify.design/flat-color-icons/high-priority.svg" alt=""></div>
+        <div class="alabel">Alert Generation</div><div class="asub">Priority scoring</div>
+      </div>
+      <div class="conn">→</div>
+      <div class="anode">
+        <div class="badge"><img src="https://api.iconify.design/flat-color-icons/bar-chart.svg" alt=""></div>
+        <div class="alabel">Dashboard</div><div class="asub">Web &amp; mobile</div>
+      </div>
+      <div class="conn">→</div>
+      <div class="anode">
+        <div class="badge"><img src="https://api.iconify.design/flat-color-icons/conference-call.svg" alt=""></div>
+        <div class="alabel">Security Response</div><div class="asub">Human in the loop</div>
+      </div>
+    </div>
+    <p style="margin-top:9mm; font-size:5.8mm; color:var(--muted);">
+      The system receives live or recorded video from surveillance cameras. Frames are extracted and passed to the
+      AI model for analysis; when suspicious activity is detected, an alert is scored by priority and pushed to the
+      web and mobile dashboards, where the security team reviews it and takes action.</p>
+  </section>
+  <!-- ===================== 06 TOOLS  |  07 METHODOLOGY (side by side) ===================== -->
+  <div class="grid">
+
+    <!-- 06 TOOLS -->
+    <section class="card">
+      <div class="sec-head">
+        <span class="n">07</span>
+        <div class="ic"><img src="images/icons/layers.png" alt=""></div>
+        <h2>Tools &amp; Technologies</h2>
+      </div>
+      <div class="tools">
+        <div class="tool"><img src="images/tools/laravel.svg"     alt=""><span>Laravel</span><small>Backend API</small></div>
+        <div class="tool"><img src="images/tools/react.svg"       alt=""><span>React</span><small>Web Dashboard</small></div>
+        <div class="tool"><img src="images/tools/flutter.svg"     alt=""><span>Flutter</span><small>Mobile App</small></div>
+        <div class="tool"><img src="images/tools/python.svg"      alt=""><span>Python</span><small>AI Service</small></div>
+        <div class="tool"><img src="images/tools/pytorch.svg"     alt=""><span>PyTorch</span><small>Deep Learning</small></div>
+        <div class="tool"><img src="images/tools/opencv.svg"      alt=""><span>OpenCV</span><small>Computer Vision</small></div>
+        <div class="tool"><img src="images/tools/fastapi.svg"     alt=""><span>FastAPI</span><small>AI / ASR API</small></div>
+        <div class="tool"><img src="images/tools/flask.svg"       alt=""><span>Flask</span><small>Streaming Gateway</small></div>
+        <div class="tool"><img src="images/tools/postgresql.svg"  alt=""><span>PostgreSQL</span><small>Database</small></div>
+        <div class="tool"><img src="images/tools/redis.svg"       alt=""><span>Redis</span><small>Real-Time Cache</small></div>
+        <div class="tool"><img src="images/tools/docker.svg"      alt=""><span>Docker</span><small>Deployment</small></div>
+        <div class="tool"><img src="images/tools/tailwindcss.svg" alt=""><span>Tailwind</span><small>UI Styling</small></div>
+      </div>
+    </section>
+
+    <!-- 07 METHODOLOGY / WORKFLOW (vertical numbered timeline · icons from the web) -->
+    <section class="card">
+      <div class="sec-head">
+        <span class="n">08</span>
+        <div class="ic"><img src="images/icons/gear.png" alt=""></div>
+        <h2>Methodology / Workflow</h2>
+      </div>
+      <div class="mtimeline">
+        <div class="mrow"><div class="mbadge"><span class="mnum">1</span><img src="https://api.iconify.design/flat-color-icons/multiple-cameras.svg" alt=""></div><div class="mt">Collect Video Input</div></div>
+        <div class="mrow"><div class="mbadge"><span class="mnum">2</span><img src="https://api.iconify.design/flat-color-icons/film.svg" alt=""></div><div class="mt">Preprocess Frames</div></div>
+        <div class="mrow"><div class="mbadge"><span class="mnum">3</span><img src="https://api.iconify.design/flat-color-icons/process.svg" alt=""></div><div class="mt">Run AI Detection</div></div>
+        <div class="mrow"><div class="mbadge"><span class="mnum">4</span><img src="https://api.iconify.design/flat-color-icons/inspection.svg" alt=""></div><div class="mt">Analyze &amp; Classify</div></div>
+        <div class="mrow"><div class="mbadge"><span class="mnum">5</span><img src="https://api.iconify.design/flat-color-icons/high-priority.svg" alt=""></div><div class="mt">Generate Alerts</div></div>
+        <div class="mrow"><div class="mbadge"><span class="mnum">6</span><img src="https://api.iconify.design/flat-color-icons/line-chart.svg" alt=""></div><div class="mt">Display on Dashboard</div></div>
+        <div class="mrow"><div class="mbadge"><span class="mnum">7</span><img src="https://api.iconify.design/flat-color-icons/approval.svg" alt=""></div><div class="mt">Review &amp; Take Action</div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== BOTTOM SHOWCASE: PEOPLE (left) · SCREENSHOTS BOX (right) ===================== -->
+  <div class="showcase">
+
+  <!-- ===================== 6. SCREENSHOTS / PROTOTYPE =====================
+       حطّ صور النظام في images/screens/ بنفس الأسماء (screen-1.png ...).
+       لو عايز تسيب مكان فاضي دلوقتي: سيب <div class="ph"> زي ما هي،
+       ولو ضفت صورة بدّل الـ ph بـ <img src="images/screens/screen-1.png">.
+  -->
+  <section class="card sc-shots">
+    <div class="sec-head">
+      <span class="n">09</span>
+      <div class="ic"><img src="images/icons/mobile.png" alt=""></div>
+      <h2>Screenshots / Prototype</h2>
+    </div>
+    <!-- Mobile + Web screenshots are generated by JS from the data arrays below.
+         Layout (count / columns) is controlled live from the toolbar panel. -->
+    <div id="mobileMount"></div>
+    <div id="webMount"></div>
+  </section>
+
+  <!-- ===================== PEOPLE (left column, under Tools) ===================== -->
+  <section class="people sc-people">
+    <!-- SUPERVISORS -->
+    <div>
+      <p class="people-head">Supervised By</p>
+      <div class="sup">
+        <div class="person">
+          <!-- لإضافة صورة المشرف: <img class="ph" src="images/supervisor-1.jpg"> -->
+          <div class="ph">PHOTO</div>
+          <div><div class="nm">Dr. Mohamed Salah Reda</div><div class="rl">Project Supervisor</div></div>
+        </div>
+        <div class="person">
+          <div class="ph">PHOTO</div>
+          <div><div class="nm">Dr. Ahmed El-Naggar</div><div class="rl">Project Supervisor</div></div>
+        </div>
+        <div class="person">
+          <div class="ph">PHOTO</div>
+          <div><div class="nm">Eng. Osama Hefny</div><div class="rl">Teaching Assistant</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <div>
+      <p class="people-head">Project Team</p>
+      <div class="team">
+        <div class="member lead"><div class="lead-badge">TEAM LEAD</div><img src="images/team/team-220357.jpeg" alt=""><div class="nm">Mohamed Emad El Deen</div><div class="rl">Full Stack · Team Lead</div></div>
+        <div class="member"><img src="images/team/team-220366.png" alt=""><div class="nm">Mohamed Mahmoud Alam</div><div class="rl">Mobile · Flutter</div></div>
+        <div class="member"><img src="images/team/team-220239.png" alt=""><div class="nm">Abdalla Mohamed Swesy</div><div class="rl">Mobile · Flutter</div></div>
+        <div class="member"><img src="images/team/team-220051.png" alt=""><div class="nm">Ahmed Mohamed Sadawu</div><div class="rl">AI / ML Engineer</div></div>
+        <div class="member"><img src="images/team/team-220031.png" alt=""><div class="nm">Ahmed Salama Ahmed</div><div class="rl">QA &amp; Testing</div></div>
+        <div class="member"><img src="images/team/team-210270.png" alt=""><div class="nm">Mohamed Ahmed Atia</div><div class="rl">UI / UX Designer</div></div>
+        <div class="member"><img src="images/team/team-220223.png" alt=""><div class="nm">Abdelrahman Amer Sayed</div><div class="rl">DevOps &amp; Streaming</div></div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /showcase -->
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="qr">
+      <img src="images/qr.png" alt="Project QR" />
+      <div class="qt"><b>Scan for live demo &amp; docs</b><span>CrimeLens project resources</span></div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ===================== EDITING · IMAGE REPLACE · PRINT ===================== -->
+<script>
+(function () {
+  var poster = document.getElementById('poster');
+
+  /* ---------- shared: pick an image file from disk ---------- */
+  function pickImage(cb) {
+    var inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'image/*';
+    inp.onchange = function () {
+      var f = inp.files && inp.files[0];
+      if (f) { cb(URL.createObjectURL(f)); }
+    };
+    inp.click();
+  }
+  function makeEditable(el) {
+    el.setAttribute('contenteditable', 'true');
+    el.setAttribute('spellcheck', 'false');
+  }
+  function bindImg(img, onSet) {
+    img.classList.add('replaceable');
+    img.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      pickImage(function (url) { img.src = url; if (onSet) { onSet(url); } });
+    });
+  }
+  function bindBox(box, onSet) {
+    box.classList.add('replaceable');
+    box.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      pickImage(function (url) {
+        box.innerHTML = '';
+        var im = document.createElement('img'); im.src = url; box.appendChild(im);
+        if (onSet) { onSet(url); }
+      });
+    });
+  }
+
+  /* ===================================================================
+     SCREENSHOTS — data + live layout (count / columns per section, max 8)
+     =================================================================== */
+  var MAX = 8;
+
+  var mobileData = [
+    { t:'Login Page',        d:'Secure access for operators & officers.', img:null },
+    { t:'Dashboard',         d:'Camera feeds, status & alerts.',          img:null },
+    { t:'Camera Monitoring', d:'Live multi-camera view.',                 img:null },
+    { t:'Detection Result',  d:'Activity with confidence score.',         img:null },
+    { t:'Incident Details',  d:'Full details of a flagged event.',        img:null },
+    { t:'Model Output',      d:'Sample AI detection example.',            img:null },
+    { t:'AI Assistant',      d:'Chat & smart guidance for officers.',     img:null },
+    { t:'Notifications',     d:'Live alerts & assignment updates.',       img:null }
+  ];
+  var webData = [
+    { t:'Operator Dashboard', d:'Live cameras, incidents & system status.', img:null },
+    { t:'Incident & Map View',d:'Detected event with location & details.',  img:null },
+    { t:'Admin & Analytics',  d:'Cameras, users & detection reports.',      img:null },
+    { t:'Live Camera Wall',   d:'Multi-camera real-time monitoring.',       img:null },
+    { t:'Incident Queue',     d:'Pending & active incidents list.',         img:null },
+    { t:'Officers & Map',     d:'Live officer locations & dispatch.',       img:null },
+    { t:'Analytics Reports',  d:'Detection trends & statistics.',           img:null },
+    { t:'System Settings',    d:'Cameras, users & permissions.',            img:null }
+  ];
+
+  /* per-column size caps (mm) so few columns don't blow up, many stay tidy */
+  var phoneCap   = {1:115,2:115,3:112,4:96,5:80,6:67,7:58,8:50};
+  var browserCap = {1:230,2:215,3:185,4:150,5:128,6:110,7:96,8:84};
+  function capFont(cols, big, mid, sm){ return cols>=7 ? sm : cols>=5 ? mid : big; }
+
+  var cfg = {
+    mobile: { count:8, cols:4 },
+    web:    { count:8, cols:4 }
+  };
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  /* keep current captions/images from DOM before a re-render so edits survive */
+  function syncFromDom(){
+    document.querySelectorAll('#mobileMount .shot').forEach(function(el, i){
+      if(!mobileData[i]) return;
+      var b=el.querySelector('.cap b'), s=el.querySelector('.cap span'), im=el.querySelector('.screen img');
+      if(b) mobileData[i].t=b.textContent; if(s) mobileData[i].d=s.textContent;
+      mobileData[i].img = im ? im.src : null;
+    });
+    document.querySelectorAll('#webMount .webshot').forEach(function(el, i){
+      if(!webData[i]) return;
+      var b=el.querySelector('.cap b'), s=el.querySelector('.cap span'), im=el.querySelector('.scr img');
+      if(b) webData[i].t=b.textContent; if(s) webData[i].d=s.textContent;
+      webData[i].img = im ? im.src : null;
+    });
+  }
+
+  function phoneItem(it, cap, fb, fs){
+    var inner = it.img ? '<img src="'+it.img+'" alt="">' : '<div class="ph-txt">screen</div>';
+    return '<div class="shot" style="max-width:'+cap+'mm">'+
+             '<div class="phone"><div class="screen">'+inner+'</div></div>'+
+             '<div class="cap"><b style="font-size:'+fb+'mm">'+esc(it.t)+'</b>'+
+             '<span style="font-size:'+fs+'mm">'+esc(it.d)+'</span></div>'+
+           '</div>';
+  }
+  function browserItem(it, cap, fb, fs){
+    var inner = it.img ? '<img src="'+it.img+'" alt="">' : '<div class="ph-txt">screen</div>';
+    return '<div class="webshot" style="max-width:'+cap+'mm">'+
+             '<div class="browser">'+
+               '<div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i></div>'+
+               '<div class="scr">'+inner+'</div>'+
+             '</div>'+
+             '<div class="cap"><b style="font-size:'+fb+'mm">'+esc(it.t)+'</b>'+
+             '<span style="font-size:'+fs+'mm">'+esc(it.d)+'</span></div>'+
+           '</div>';
+  }
+
+  function renderShots(){
+    /* MOBILE */
+    var mc = cfg.mobile.count, mcols = Math.min(cfg.mobile.cols, mc || 1);
+    var mMount = document.getElementById('mobileMount');
+    if(mc > 0){
+      var fb = capFont(mcols, 4.2, 3.7, 3.3), fs = capFont(mcols, 3.3, 3.0, 2.7);
+      var html = '<div class="sub-label"><img src="images/icons/mobile.png" alt="" style="width:7mm;height:7mm">Mobile App (Flutter)</div>'+
+                 '<div class="shots" style="grid-template-columns:repeat('+mcols+',minmax(0,1fr))">';
+      for(var i=0;i<mc;i++){ html += phoneItem(mobileData[i], phoneCap[mcols], fb, fs); }
+      html += '</div>';
+      mMount.innerHTML = html;
+    } else { mMount.innerHTML = ''; }
+
+    /* WEB */
+    var wc = cfg.web.count, wcols = Math.min(cfg.web.cols, wc || 1);
+    var wMount = document.getElementById('webMount');
+    if(wc > 0){
+      var wfb = capFont(wcols, 4.0, 3.7, 3.3), wfs = capFont(wcols, 3.3, 3.1, 2.7);
+      var top = mc > 0 ? ' style="margin-top:10mm"' : '';
+      var whtml = '<div class="sub-label"'+top+'><img src="images/icons/web.png" alt="" style="width:7mm;height:7mm">Web Dashboard</div>'+
+                  '<div class="webshots" style="grid-template-columns:repeat('+wcols+',minmax(0,1fr))">';
+      for(var j=0;j<wc;j++){ whtml += browserItem(webData[j], browserCap[wcols], wfb, wfs); }
+      whtml += '</div>';
+      wMount.innerHTML = whtml;
+    } else { wMount.innerHTML = ''; }
+
+    bindShots();
+    updateRowsReadout();
+  }
+
+  /* make generated captions editable + screens replaceable */
+  function bindShots(){
+    poster.querySelectorAll('#mobileMount .cap b, #mobileMount .cap span, #webMount .cap b, #webMount .cap span')
+      .forEach(makeEditable);
+    poster.querySelectorAll('#mobileMount .phone .screen').forEach(function(box, i){
+      bindBox(box, function(url){ if(mobileData[i]) mobileData[i].img = url; });
+    });
+    poster.querySelectorAll('#webMount .browser .scr').forEach(function(box, i){
+      bindBox(box, function(url){ if(webData[i]) webData[i].img = url; });
+    });
+  }
+
+  /* ---------- toolbar controls ---------- */
+  function fillSelect(sel, min, max, val){
+    for(var n=min;n<=max;n++){
+      var o=document.createElement('option'); o.value=n; o.textContent=n;
+      if(n===val) o.selected=true; sel.appendChild(o);
+    }
+  }
+  var mobCount=document.getElementById('mobCount'), mobCols=document.getElementById('mobCols'),
+      webCount=document.getElementById('webCount'), webCols=document.getElementById('webCols');
+  fillSelect(mobCount,0,MAX,cfg.mobile.count); fillSelect(mobCols,1,MAX,cfg.mobile.cols);
+  fillSelect(webCount,0,MAX,cfg.web.count);    fillSelect(webCols,1,MAX,cfg.web.cols);
+
+  function updateRowsReadout(){
+    var mc=cfg.mobile.count, mcols=Math.min(cfg.mobile.cols, mc||1);
+    var wc=cfg.web.count, wcols=Math.min(cfg.web.cols, wc||1);
+    document.getElementById('mobRows').textContent = mc? Math.ceil(mc/mcols)+(Math.ceil(mc/mcols)>1?' rows':' row') : '—';
+    document.getElementById('webRows').textContent = wc? Math.ceil(wc/wcols)+(Math.ceil(wc/wcols)>1?' rows':' row') : '—';
+  }
+
+  function onCtrl(){
+    syncFromDom();
+    cfg.mobile.count=+mobCount.value; cfg.mobile.cols=+mobCols.value;
+    cfg.web.count=+webCount.value;    cfg.web.cols=+webCols.value;
+    renderShots();
+  }
+  [mobCount,mobCols,webCount,webCols].forEach(function(s){ s.addEventListener('change', onCtrl); });
+
+  var panel=document.getElementById('layoutPanel'), toggle=document.getElementById('layoutToggle');
+  toggle.addEventListener('click', function(){
+    panel.classList.toggle('open'); toggle.classList.toggle('active');
+  });
+
+  /* ===================================================================
+     STATIC (non-screenshot) editing + image replace — bound once
+     =================================================================== */
+  var editable = [
+    '.title h1', '.title .sub', '.title .tag',
+    '.abstract p', '.abstract h2',
+    '.stat .num', '.stat .lbl',
+    '.card p', '.mini-head h3', '.obj-list li',
+    '.feat .ft', '.feat .fd',
+    '.arch .alabel', '.arch .asub',
+    '.mrow .mt',
+    '.tool span', '.tool small',
+    '.sec-head h2',
+    '.uni-text div', '.people-head',
+    '.sup .person .nm', '.sup .person .rl',
+    '.member .nm', '.member .rl',
+    '.footer .qt b', '.footer .qt span', '.footer .meta', '.qrbox span'
+  ];
+  poster.querySelectorAll(editable.join(',')).forEach(makeEditable);
+  poster.querySelectorAll('.topbar img, .title .logo, .title .mascot, .qrbox img, .footer .qr img, .member img, .tool img, .abstract .ab-head img, .feat img, .arch .badge img, .mrow .mbadge img')
+    .forEach(function (img) { bindImg(img); });
+  poster.querySelectorAll('.sup .person .ph').forEach(function (box) { bindBox(box); });
+
+  /* Reset */
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    if (confirm('Reset all edits and reload the original poster?')) { location.reload(); }
+  });
+
+  /* first paint */
+  renderShots();
+})();
+</script>
+</body>
+</html>
