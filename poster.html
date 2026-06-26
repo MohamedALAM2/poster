@@ -350,8 +350,8 @@
   .title .mascot{ width:55mm; height:55mm; object-fit:contain; flex:none;
     filter:drop-shadow(0 2.5mm 6mm rgba(0,0,0,.30)); }
 
-  /* ====================== COMBINED PROBLEM + SOLUTION CARD ====================== */
-  .ps-card .blk + .blk{ margin-top:9mm; }
+  /* ====================== PROBLEM / SOLUTION MINI CARDS ====================== */
+  .mini-card{ display:flex; flex-direction:column; justify-content:flex-start; }
   .mini-head{ display:inline-flex; align-items:center; gap:4mm; margin:0 0 4.5mm;
     padding:3mm 9mm 3mm 3mm; border-radius:7mm; box-shadow:0 1.5mm 5mm rgba(11,42,74,.16); }
   .mini-head .n{ width:11mm; height:11mm; border-radius:3mm; font-size:6mm; font-weight:900;
@@ -364,7 +364,10 @@
   .mini-head.green{ background:linear-gradient(135deg,#15713f,#1f9d57); }
   .mini-head.red .n{ background:#fff; color:var(--red); }
   .mini-head.green .n{ background:#fff; color:var(--green); }
-  .ps-card p{ font-size:6mm; line-height:1.48; margin:0; }
+  .mini-card p{ font-size:6mm; line-height:1.48; margin:0; }
+  .grid .obj-list{ gap:4mm; }
+  .grid .obj-list li{ gap:4mm; font-size:5.8mm; line-height:1.32; }
+  .grid .obj-list li img{ width:7mm; height:7mm; margin-top:.6mm; }
 
   /* ====================== KEY FEATURES ====================== */
   .feats{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
@@ -548,31 +551,31 @@
        intelligent systems that support security teams instead of relying on manual watching alone.</p>
   </section>
 
-  <!-- ===================== 02+03 PROBLEM & SOLUTION (one card)  |  04 KEY FEATURES ===================== -->
+  <!-- ===================== 02+03+04+05: PROBLEM · FEATURES · SOLUTION · OBJECTIVES ===================== -->
   <div class="grid">
 
-    <!-- 02 + 03 : Problem Statement + Our Professional Solution (stacked in one card) -->
-    <section class="card ps-card">
-      <div class="blk">
-        <div class="mini-head red">
-          <div class="ic"><img src="images/icons/siren.png" alt=""></div>
-          <h3>Problem Statement</h3>
-        </div>
-        <p>Traditional surveillance systems mainly depend on human operators to monitor camera feeds continuously.
-           This is time-consuming, error-prone, and may lead to delayed response when suspicious or criminal
-           activities happen. In crowded or sensitive areas, it becomes difficult to detect incidents quickly and
-           accurately using manual monitoring only.</p>
+    <!-- 02 PROBLEM STATEMENT -->
+    <section class="card mini-card">
+      <div class="mini-head red">
+        <div class="ic"><img src="images/icons/siren.png" alt=""></div>
+        <h3>Problem Statement</h3>
       </div>
-      <div class="blk">
-        <div class="mini-head green">
-          <div class="ic"><img src="images/icons/shield.png" alt=""></div>
-          <h3>Our Professional Solution</h3>
-        </div>
-        <p><b>CrimeLens</b> uses Artificial Intelligence and Computer Vision to analyze video streams and detect
-           suspicious or criminal behaviours automatically. It processes camera input, identifies potential threats,
-           and generates real-time, priority-scored alerts — turning hours of manual monitoring into instant,
-           actionable insight for security teams.</p>
+      <p>Traditional surveillance systems mainly depend on human operators to monitor camera feeds continuously.
+         This is time-consuming, error-prone, and may lead to delayed response when suspicious or criminal
+         activities happen. In crowded or sensitive areas, it becomes difficult to detect incidents quickly and
+         accurately using manual monitoring only.</p>
+    </section>
+
+    <!-- 03 PROFESSIONAL SOLUTION -->
+    <section class="card mini-card">
+      <div class="mini-head green">
+        <div class="ic"><img src="images/icons/shield.png" alt=""></div>
+        <h3>Our Professional Solution</h3>
       </div>
+      <p><b>CrimeLens</b> uses Artificial Intelligence and Computer Vision to analyze video streams and detect
+         suspicious or criminal behaviours automatically. It processes camera input, identifies potential threats,
+         and generates real-time, priority-scored alerts — turning hours of manual monitoring into instant,
+         actionable insight for security teams.</p>
     </section>
 
     <!-- 04 KEY FEATURES (AI icons fetched live from the web) -->
@@ -596,22 +599,22 @@
           <div><div class="ft">Human-in-Loop</div><div class="fd">Operator stays in control</div></div></div>
       </div>
     </section>
-  </div>
 
-  <!-- ===================== 05. PROJECT OBJECTIVES ===================== -->
-  <section class="card full">
-    <div class="sec-head">
-      <div class="ic"><img src="images/icons/target.png" alt=""></div>
-      <h2>Project Objectives</h2>
-    </div>
-    <ul class="obj-list">
-      <li><img src="images/icons/check.png" alt="">Develop an AI-powered surveillance system for detecting suspicious activities.</li>
-      <li><img src="images/icons/check.png" alt="">Reduce the dependency on manual camera monitoring.</li>
-      <li><img src="images/icons/check.png" alt="">Improve the speed of detecting and responding to criminal events.</li>
-      <li><img src="images/icons/check.png" alt="">Provide a smart interface for viewing alerts and system outputs.</li>
-      <li><img src="images/icons/check.png" alt="">Support real-time video analysis using Computer Vision techniques.</li>
-    </ul>
-  </section>
+    <!-- 05 PROJECT OBJECTIVES -->
+    <section class="card">
+      <div class="sec-head">
+        <div class="ic"><img src="images/icons/target.png" alt=""></div>
+        <h2>Project Objectives</h2>
+      </div>
+      <ul class="obj-list">
+        <li><img src="images/icons/check.png" alt="">Develop an AI-powered surveillance system for detecting suspicious activities.</li>
+        <li><img src="images/icons/check.png" alt="">Reduce the dependency on manual camera monitoring.</li>
+        <li><img src="images/icons/check.png" alt="">Improve the speed of detecting and responding to criminal events.</li>
+        <li><img src="images/icons/check.png" alt="">Provide a smart interface for viewing alerts and system outputs.</li>
+        <li><img src="images/icons/check.png" alt="">Support real-time video analysis using Computer Vision techniques.</li>
+      </ul>
+    </section>
+  </div>
 
   <!-- ===================== 06. SYSTEM ARCHITECTURE ===================== -->
   <section class="card full">
