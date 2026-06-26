@@ -129,13 +129,14 @@
   .institution-ribbon::after{
     content:""; position:absolute; left:-.9mm; right:-.9mm; bottom:-32mm;
     height:34mm;
-    background:#071a2e;
+    background:#12395b;
     clip-path:polygon(0 0, 100% 0, 50% 100%);
     filter:drop-shadow(0 1.3mm 1mm rgba(13,27,42,.16));
   }
   .ribbon-logo{
     position:relative;
     z-index:1;
+    flex:1;
     min-height:57mm;
     display:flex;
     flex-direction:column;
@@ -144,8 +145,10 @@
     gap:3mm;
     padding:8mm 7mm;
     text-align:center;
-    background:#071a2e;
-    border-radius:2mm;
+    background:#12395b;
+    border:.9mm solid #1d6087;
+    border-radius:3mm;
+    box-shadow:0 2mm 7mm rgba(13,27,42,.18);
   }
   .ribbon-logo img{ max-width:44mm; max-height:42mm; object-fit:contain; }
   .ribbon-logo span{ font-size:5.2mm; font-weight:800; color:#fff; line-height:1.15; }
