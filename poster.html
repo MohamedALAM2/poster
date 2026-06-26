@@ -136,8 +136,8 @@
     border:.4mm solid rgba(255,255,255,.35); padding:2.8mm 6mm; border-radius:20mm; }
   .title .head-txt{ flex:1; }
   .title .qrbox{ margin-left:auto; flex:none; text-align:center; }
-  .title .qrbox img{ width:56mm; height:56mm; background:#fff; border-radius:9mm;
-    padding:3.5mm; display:block; }
+  .title .qrbox img{ width:56mm; height:56mm; background:transparent;
+    border:0; border-radius:0; padding:0; display:block; }
   .title .qrbox span{ display:block; font-size:5mm; font-weight:700; color:#cfe6f5; margin-top:3mm; }
 
   /* ====================== STATS STRIP ====================== */
@@ -504,7 +504,7 @@
       </div>
     </div>
     <div class="qrbox">
-      <img src="images/qr.png" alt="Project QR" />
+      <img src="images/qr-dark.png" alt="Project QR" />
       <span>Scan for demo &amp; docs</span>
     </div>
   </section>
@@ -523,9 +523,9 @@
   </section>
 
   <!-- ===================== 01. INTRODUCTION (general background — not the project) ===================== -->
+
   <section class="card full">
     <div class="sec-head">
-      <span class="n">01</span>
       <div class="ic"><img src="images/icons/flag.png" alt=""></div>
       <h2>Introduction</h2>
     </div>
@@ -544,14 +544,14 @@
     <!-- 02 + 03 : Problem Statement + Our Professional Solution (stacked in one card) -->
     <section class="card ps-card">
       <div class="blk">
-        <div class="mini-head red"><span class="n">02</span><h3>Problem Statement</h3></div>
+        <div class="mini-head red"><h3>Problem Statement</h3></div>
         <p>Traditional surveillance systems mainly depend on human operators to monitor camera feeds continuously.
            This is time-consuming, error-prone, and may lead to delayed response when suspicious or criminal
            activities happen. In crowded or sensitive areas, it becomes difficult to detect incidents quickly and
            accurately using manual monitoring only.</p>
       </div>
       <div class="blk">
-        <div class="mini-head green"><span class="n">03</span><h3>Our Professional Solution</h3></div>
+        <div class="mini-head green"><h3>Our Professional Solution</h3></div>
         <p><b>CrimeLens</b> uses Artificial Intelligence and Computer Vision to analyze video streams and detect
            suspicious or criminal behaviours automatically. It processes camera input, identifies potential threats,
            and generates real-time, priority-scored alerts — turning hours of manual monitoring into instant,
@@ -562,7 +562,6 @@
     <!-- 04 KEY FEATURES (AI icons fetched live from the web) -->
     <section class="card">
       <div class="sec-head">
-        <span class="n">04</span>
         <div class="ic"><img src="images/icons/ai.png" alt=""></div>
         <h2>Key Features</h2>
       </div>
@@ -586,7 +585,6 @@
   <!-- ===================== 05. PROJECT OBJECTIVES ===================== -->
   <section class="card full">
     <div class="sec-head">
-      <span class="n">05</span>
       <div class="ic"><img src="images/icons/target.png" alt=""></div>
       <h2>Project Objectives</h2>
     </div>
@@ -602,7 +600,6 @@
   <!-- ===================== 06. SYSTEM ARCHITECTURE ===================== -->
   <section class="card full">
     <div class="sec-head">
-      <span class="n">06</span>
       <div class="ic"><img src="images/icons/network.png" alt=""></div>
       <h2>System Architecture</h2>
     </div>
@@ -649,7 +646,6 @@
     <!-- 06 TOOLS -->
     <section class="card">
       <div class="sec-head">
-        <span class="n">07</span>
         <div class="ic"><img src="images/icons/layers.png" alt=""></div>
         <h2>Tools &amp; Technologies</h2>
       </div>
@@ -672,7 +668,6 @@
     <!-- 07 METHODOLOGY / WORKFLOW (vertical numbered timeline · icons from the web) -->
     <section class="card">
       <div class="sec-head">
-        <span class="n">08</span>
         <div class="ic"><img src="images/icons/gear.png" alt=""></div>
         <h2>Methodology / Workflow</h2>
       </div>
@@ -698,7 +693,7 @@
   -->
   <section class="card sc-shots">
     <div class="sec-head">
-      <span class="n">09</span>
+      <!-- <span class="n">09</span> -->
       <div class="ic"><img src="images/icons/mobile.png" alt=""></div>
       <h2>Screenshots / Prototype</h2>
     </div>
