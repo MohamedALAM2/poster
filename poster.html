@@ -97,7 +97,6 @@
     inset:0 0 auto 0;
     height:calc(100% - 27mm);
     background:linear-gradient(135deg,var(--navy),#10395f 60%,#0e4e74);
-    border-bottom:.6mm solid rgba(11,42,74,.14);
     border-radius:var(--radius) var(--radius) 0 0;
     pointer-events:none;
     z-index:0;
@@ -115,14 +114,10 @@
     flex-direction:column;
     justify-content:flex-start;
     background:#12395b;
-    border:.9mm solid #1d6087;
-    border-top:4mm solid var(--blue);
-    border-radius:0 0 3mm 3mm;
-    box-shadow:0 2mm 7mm rgba(13,27,42,.18);
+    border-radius:3mm;
   }
   .institution-ribbon::before{
     content:""; position:absolute; inset:3mm;
-    border:.45mm solid rgba(255,255,255,.2);
     border-radius:0 0 2.5mm 2.5mm;
     pointer-events:none;
   }
@@ -146,9 +141,7 @@
     padding:8mm 7mm;
     text-align:center;
     background:#12395b;
-    border:.9mm solid #1d6087;
     border-radius:3mm;
-    box-shadow:0 2mm 7mm rgba(13,27,42,.18);
   }
   .ribbon-logo img{ max-width:44mm; max-height:42mm; object-fit:contain; }
   .ribbon-logo span{ font-size:5.2mm; font-weight:800; color:#fff; line-height:1.15; }
