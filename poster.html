@@ -469,19 +469,20 @@
   .feat .ft{ font-size:7.3mm; font-weight:800; color:var(--navy); line-height:1.15; }
   .feat .fd{ font-size:5.8mm; color:var(--muted); margin-top:1mm; line-height:1.2; }
 
-  /* ====================== METHODOLOGY (vertical timeline inside narrow card) ====================== */
-  .mtimeline{ display:flex; flex-direction:column; gap:5.5mm; }
-  .mrow{ display:flex; align-items:center; gap:5mm; }
-  .mrow .mbadge{ position:relative; width:19mm; height:19mm; border-radius:50%; background:var(--soft);
-    border:.8mm solid var(--blue); display:flex; align-items:center; justify-content:center; flex:none; }
-  .mrow .mbadge img{ width:11mm; height:11mm; object-fit:contain; }
-  .mrow .mnum{ position:absolute; top:-2.5mm; right:-2.5mm; width:9mm; height:9mm; border-radius:50%;
-    background:var(--blue); color:#fff; font-size:6.3mm; font-weight:900; border:.7mm solid #fff;
-    display:flex; align-items:center; justify-content:center; }
-  .mrow .mt{ font-size:7.5mm; font-weight:800; color:var(--navy); line-height:1.2; }
+  /* ====================== METHODOLOGY (workflow image slot) ====================== */
+  .mcard{ display:flex; flex-direction:column; align-self:start; }
+  .mflow-img{ width:100%; min-height:90mm; border:1mm dashed var(--line); border-radius:8mm;
+    background:var(--soft); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  /* image fills the slot width, natural height → no letterbox, box fits the image
+     (max-height only caps extreme/portrait images; wide diagrams show in full) */
+  .mflow-img img{ display:block; width:100%; height:auto; max-height:300mm; object-fit:cover; }
+  .mflow-img .ph-txt{ text-align:center; color:var(--muted); font-size:8mm; font-weight:800; line-height:1.5; padding:8mm; }
+  .mflow-img .ph-txt span{ display:block; margin-top:3mm; font-size:6mm; font-weight:600; }
 
-  /* tools grid when placed in the narrow Tools|Methodology row */
-  .grid .tools{ grid-template-columns:repeat(3,1fr); gap:6mm; }
+  /* tools grid: 4 columns, stretches to match the workflow-image card height */
+  .grid .tools{ grid-template-columns:repeat(4,1fr); gap:6mm; }
+  .tcard{ display:flex; flex-direction:column; }
+  .tcard .tools{ flex:1; align-content:space-between; }
 
   /* ====================== FOOTER ====================== */
   .footer{ display:flex; align-items:center; justify-content:space-between; gap:10mm;
@@ -917,7 +918,7 @@
   <div class="grid">
 
     <!-- 06 TOOLS -->
-    <section class="card">
+    <section class="card tcard">
       <div class="sec-head">
         <div class="ic"><img src="images/icons/layers.png" alt=""></div>
         <h2>Tools &amp; Technologies</h2>
@@ -938,20 +939,17 @@
       </div>
     </section>
 
-    <!-- 07 METHODOLOGY / WORKFLOW (vertical numbered timeline · icons from the web) -->
-    <section class="card">
+    <!-- 07 METHODOLOGY / WORKFLOW (workflow image slot) -->
+    <section class="card mcard">
       <div class="sec-head">
         <div class="ic"><img src="images/icons/gear.png" alt=""></div>
         <h2>Methodology / Workflow</h2>
       </div>
-      <div class="mtimeline">
-        <div class="mrow"><div class="mbadge"><span class="mnum">1</span><img src="https://api.iconify.design/flat-color-icons/multiple-cameras.svg" alt=""></div><div class="mt">Collect Video Input</div></div>
-        <div class="mrow"><div class="mbadge"><span class="mnum">2</span><img src="https://api.iconify.design/flat-color-icons/film.svg" alt=""></div><div class="mt">Preprocess Frames</div></div>
-        <div class="mrow"><div class="mbadge"><span class="mnum">3</span><img src="https://api.iconify.design/flat-color-icons/process.svg" alt=""></div><div class="mt">Run AI Detection</div></div>
-        <div class="mrow"><div class="mbadge"><span class="mnum">4</span><img src="https://api.iconify.design/flat-color-icons/inspection.svg" alt=""></div><div class="mt">Analyze &amp; Classify</div></div>
-        <div class="mrow"><div class="mbadge"><span class="mnum">5</span><img src="https://api.iconify.design/flat-color-icons/high-priority.svg" alt=""></div><div class="mt">Generate Alerts</div></div>
-        <div class="mrow"><div class="mbadge"><span class="mnum">6</span><img src="https://api.iconify.design/flat-color-icons/line-chart.svg" alt=""></div><div class="mt">Display on Dashboard</div></div>
-        <div class="mrow"><div class="mbadge"><span class="mnum">7</span><img src="https://api.iconify.design/flat-color-icons/approval.svg" alt=""></div><div class="mt">Review &amp; Take Action</div></div>
+      <!-- اضغط على البوكس ده وحط صورة الـ workflow اللي ولّدتها (PNG)،
+           أو حطّها في images/workflow.png وفُكّ الكومنت عن سطر <img> تحت. -->
+      <div class="mflow-img replaceable">
+        <div class="ph-txt">🗺️ Workflow Diagram<br><span>اضغط لإضافة صورة الـ Workflow (PNG)</span></div>
+        <!-- <img src="images/workflow.png" alt="Automated Surveillance Workflow"> -->
       </div>
     </section>
   </div>
@@ -1257,9 +1255,9 @@
     '.footer .qt b', '.footer .qt span', '.footer .meta', '.qrbox span'
   ];
   poster.querySelectorAll(editable.join(',')).forEach(makeEditable);
-  poster.querySelectorAll('.topbar img, .title .logo, .title .mascot, .qrbox img, .footer .qr img, .member img, .tool img, .abstract .sec-head img, .feat img, .arch .badge img, .mrow .mbadge img')
+  poster.querySelectorAll('.topbar img, .title .logo, .title .mascot, .qrbox img, .footer .qr img, .member img, .tool img, .abstract .sec-head img, .feat img, .arch .badge img')
     .forEach(function (img) { bindImg(img); });
-  poster.querySelectorAll('.sup .person .ph').forEach(function (el) {
+  poster.querySelectorAll('.sup .person .ph, .mflow-img').forEach(function (el) {
     if (el.tagName && el.tagName.toLowerCase() === 'img') { bindImg(el); }
     else { bindBox(el); }
   });
