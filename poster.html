@@ -337,7 +337,7 @@
   /* ====================== PEOPLE ====================== */
   .people{ display:grid; grid-template-columns:1fr 1.55fr; gap:10mm; align-items:stretch; }
   .sup{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:7mm 11mm; align-items:start;
-    padding-top:3mm; }
+    padding:10mm; border:.6mm solid var(--blue); border-radius:var(--radius); background:#fff; }
   .sup .person{ display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:3.5mm;
     padding:0 3mm; text-align:center; }
   .sup .person.top{ grid-column:1 / -1; justify-self:center; width:52%; }
@@ -350,7 +350,8 @@
   .sup .person .nm{ font-size:7.9mm; font-weight:900; color:var(--navy); line-height:1.15; }
   .sup .person .rl{ font-size:6.5mm; font-weight:700; color:var(--blue); margin-top:1.2mm; }
 
-  .team{ display:grid; grid-template-columns:repeat(4,1fr); gap:7mm; align-items:start; }
+  .team{ display:grid; grid-template-columns:repeat(4,1fr); gap:7mm; align-items:start;
+    padding:10mm; border:.6mm solid var(--blue); border-radius:var(--radius); background:#fff; }
   .member{ align-self:start; text-align:center; background:#fff; border:.5mm solid var(--line); border-radius:10mm; padding:6mm 3mm 5.5mm; }
   .member img{ width:38mm; height:38mm; border-radius:50%; object-fit:cover; border:1.2mm solid var(--cyan); }
   .member img.portrait-lower{ object-position:center 0%; }
@@ -573,13 +574,13 @@
 
   .sc-people.people{ gap:16mm; }
   .people-head{ font-size:14.3mm; margin-bottom:7mm; }
-  .sup{ gap:11mm 16mm; padding-top:5mm; }
+  .sup{ gap:11mm 16mm; padding:12mm; }
   .sup .person{ gap:5mm; }
   .sup .person.top{ width:62%; }
   .sup .person .ph{ width:38mm; height:38mm; font-size:6.7mm; }
   .sup .person .nm{ font-size:9.3mm; }
   .sup .person .rl{ font-size:7.6mm; }
-  .team{ gap:10mm; }
+  .team{ gap:10mm; padding:12mm; }
   .member{ padding:8mm 5mm 7mm; border-radius:12mm; }
   .member img{ width:46mm; height:46mm; }
   .member .nm{ font-size:8.7mm; margin-top:5mm; }
