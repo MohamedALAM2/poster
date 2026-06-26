@@ -100,24 +100,6 @@
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    background:#12395b;
-    border:.9mm solid #1d6087;
-    border-top:4mm solid var(--blue);
-    border-radius:0 0 3mm 3mm;
-    box-shadow:0 2mm 7mm rgba(13,27,42,.18);
-  }
-  .institution-ribbon::before{
-    content:""; position:absolute; inset:3mm;
-    border:.45mm solid rgba(255,255,255,.2);
-    border-radius:0 0 2.5mm 2.5mm;
-    pointer-events:none;
-  }
-  .institution-ribbon::after{
-    content:""; position:absolute; left:-.9mm; right:-.9mm; bottom:-32mm;
-    height:34mm;
-    background:#12395b;
-    clip-path:polygon(0 0, 100% 0, 50% 100%);
-    filter:drop-shadow(0 1.3mm 1mm rgba(13,27,42,.16));
   }
   .ribbon-logo{
     position:relative;
@@ -131,17 +113,16 @@
     padding:8mm 7mm;
     text-align:center;
   }
-  .ribbon-logo + .ribbon-logo{
-    border-top:.55mm solid rgba(255,255,255,.25);
-  }
+
   .ribbon-logo img{ max-width:44mm; max-height:42mm; object-fit:contain; }
-  .ribbon-logo span{ font-size:5.2mm; font-weight:800; color:#eaf3fb; line-height:1.15; }
+  .ribbon-logo span{ font-size:5.2mm; font-weight:800; color:var(--navy); line-height:1.15; }
   .top-title{
     min-width:0;
-    padding-top:37mm;
+    padding-top:10mm;
     display:flex;
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
+    justify-content:center;
     gap:10mm;
   }
   .uni-text{ width:100%; text-align:center; line-height:1.28; }
@@ -150,27 +131,24 @@
     width:100%;
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:12mm;
   }
   .project-logo-card{
-    width:74mm;
-    height:74mm;
+    width:90mm;
+    height:90mm;
     flex:none;
     display:flex;
     align-items:center;
     justify-content:center;
     background:#fff;
-    border:.8mm solid var(--navy);
-    border-radius:5mm;
-    box-shadow:0 1.5mm 5mm rgba(13,27,42,.12);
   }
   .project-logo-card img{
-    width:56mm;
-    height:56mm;
+    width:76mm;
+    height:76mm;
     object-fit:contain;
-    filter:drop-shadow(0 1.4mm 3mm rgba(13,27,42,.2));
   }
-  .brand-copy{ min-width:0; }
+  .brand-copy{ min-width:0; text-align:center; }
   .brand-copy h1{ font-size:39mm; line-height:1; margin:0; font-weight:900; letter-spacing:-.35mm; color:#fff; }
   .brand-copy h1 .crime-word{
     color:var(--navy);
@@ -182,27 +160,18 @@
   }
   .brand-copy h1 .lens{ color:var(--cyan); }
   .brand-copy .sub{ font-size:10.2mm; font-weight:700; color:var(--navy); margin-top:3mm; }
-  .brand-copy .tags{ margin-top:5mm; display:flex; gap:3.5mm; flex-wrap:wrap; }
+  .brand-copy .tags{ margin-top:5mm; display:flex; gap:3.5mm; flex-wrap:wrap; justify-content:center; }
   .brand-copy .tag{ font-size:5.4mm; font-weight:800; color:var(--navy); background:var(--soft);
     border:.35mm solid var(--line); padding:2.3mm 4.8mm; border-radius:20mm; }
   .top-qr{
     position:relative;
-    align-self:flex-start;
-    margin-top:70mm;
-    min-height:70mm;
-    padding:6mm 0 0 9mm;
+    margin-top:10mm;
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
   }
-  .top-qr::before{
-    content:""; position:absolute; left:0; top:0; width:62mm; height:45mm;
-    border-left:.9mm solid var(--navy);
-    border-top:.9mm solid var(--navy);
-    pointer-events:none;
-  }
-  .top-qr img{ width:54mm; height:54mm; object-fit:contain; display:block; }
+  .top-qr img{ width:72mm; height:72mm; object-fit:contain; display:block; }
   .top-qr span{ display:block; margin-top:3mm; font-size:5.8mm; font-weight:800; color:var(--navy); }
 
   /* ====================== TITLE ====================== */
