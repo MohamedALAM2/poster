@@ -91,6 +91,10 @@
     gap:16mm;
     padding:0 0 8mm;
     border-bottom:.6mm solid rgba(11,42,74,.14);
+    background:linear-gradient(135deg,var(--navy),#10395f 60%,#0e4e74);
+    border-radius:var(--radius) var(--radius) 0 0;
+    margin:-28mm -28mm 0;
+    padding:28mm 28mm 8mm;
   }
   .institution-ribbon{
     position:relative;
@@ -176,11 +180,18 @@
       -.45mm  .45mm 0 #fff,
        .45mm  .45mm 0 #fff;
   }
+  .topbar .brand-copy h1 .crime-word{
+    color:#fff;
+    text-shadow:none;
+  }
   .brand-copy h1 .lens{ color:var(--cyan); }
   .brand-copy .sub{ font-size:10.2mm; font-weight:700; color:var(--navy); margin-top:3mm; }
+  .topbar .brand-copy .sub{ color:#cfe6f5; }
   .brand-copy .tags{ margin-top:5mm; display:flex; gap:3.5mm; flex-wrap:wrap; justify-content:center; }
   .brand-copy .tag{ font-size:5.4mm; font-weight:800; color:var(--navy); background:var(--soft);
     border:.35mm solid var(--line); padding:2.3mm 4.8mm; border-radius:20mm; }
+  .topbar .brand-copy .tag{ color:#fff; background:rgba(255,255,255,.12);
+    border:.4mm solid rgba(255,255,255,.35); }
   .top-qr{
     position:relative;
     margin-top:10mm;
@@ -191,6 +202,7 @@
   }
   .top-qr img{ width:72mm; height:72mm; object-fit:contain; display:block; }
   .top-qr span{ display:block; margin-top:3mm; font-size:5.8mm; font-weight:800; color:var(--navy); }
+  .topbar .top-qr span{ color:#cfe6f5; }
 
   /* ====================== TITLE ====================== */
   .title{
