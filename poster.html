@@ -61,7 +61,7 @@
     background:var(--bg);
     position:relative;
     overflow:hidden;
-    border-radius:var(--radius) var(--radius) 0 0;
+    border-radius:0;
     padding:28mm 28mm 24mm;
     display:flex; flex-direction:column;
     flex:0 0 auto;
@@ -88,7 +88,7 @@
     padding:0 0 8mm;
     border-bottom:0;
     background:transparent;
-    border-radius:var(--radius) var(--radius) 0 0;
+    border-radius:0;
     margin:-28mm -28mm 0;
     padding:28mm 28mm 8mm;
   }
@@ -96,9 +96,9 @@
     content:"";
     position:absolute;
     inset:0 0 auto 0;
-    height:calc(100% - 27mm);
+    height:100%;
     background:var(--navy);
-    border-radius:var(--radius) var(--radius) 0 0;
+    border-radius:0;
     pointer-events:none;
     z-index:0;
   }
@@ -343,12 +343,12 @@
   .sup .person{ display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:3.5mm;
     padding:6mm 3mm; text-align:center; background:#fff; border:.5mm solid var(--line); border-radius:10mm; }
   .sup .person.top{ grid-column:1 / -1; justify-self:center; width:52%; }
-  .sup .person .ph{ width:42mm; height:42mm; border-radius:50%; flex:none; object-fit:cover; overflow:hidden;
-    background:#dde6f2; border:.9mm solid var(--blue); display:flex; align-items:center; justify-content:center;
+  .sup .person .ph{ width:46mm; height:46mm; border-radius:50%; flex:none; object-fit:cover; overflow:hidden;
+    background:#dde6f2; border:1.2mm solid var(--cyan); display:flex; align-items:center; justify-content:center;
     color:var(--muted); font-size:10.9mm; font-weight:700; text-align:center; line-height:1; }
-  .sup .person .ph img,
-  .sup .person img.ph{ width:100%; height:100%; max-width:100%; max-height:100%;
+  .sup .person .ph img{ width:100%; height:100%; max-width:100%; max-height:100%;
     display:block; object-fit:cover; border-radius:inherit; }
+  .sup .person img.ph{ display:block; }
   .sup .person .nm{ font-size:12.9mm; font-weight:900; color:var(--navy); line-height:1.15; }
   .sup .person .rl{ font-size:11.5mm; font-weight:700; color:var(--blue); margin-top:1.2mm; }
 
@@ -581,7 +581,7 @@
   .sup{ gap:11mm 16mm; padding:12mm; }
   .sup .person{ gap:5mm; padding:8mm 4mm; }
   .sup .person.top{ width:62%; }
-  .sup .person .ph{ width:50mm; height:50mm; font-size:11.7mm; }
+  .sup .person .ph{ width:46mm; height:46mm; font-size:11.7mm; }
   .sup .person .nm{ font-size:14.3mm; }
   .sup .person .rl{ font-size:12.6mm; }
   .team{ gap:8mm; padding:10mm; }
@@ -948,8 +948,7 @@
       <!-- اضغط على البوكس ده وحط صورة الـ workflow اللي ولّدتها (PNG)،
            أو حطّها في images/workflow.png وفُكّ الكومنت عن سطر <img> تحت. -->
       <div class="mflow-img replaceable">
-        <div class="ph-txt">🗺️ Workflow Diagram<br><span>اضغط لإضافة صورة الـ Workflow (PNG)</span></div>
-        <!-- <img src="images/workflow.png" alt="Automated Surveillance Workflow"> -->
+        <img src="images/صور الدكاتره/Workflow.png" alt="Automated Surveillance Workflow">
       </div>
     </section>
   </div>
@@ -983,16 +982,15 @@
       <p class="people-head">Supervised By</p>
       <div class="sup">
         <div class="person top">
-          <div class="ph">PHOTO</div>
+          <img class="ph" src="images/صور الدكاتره/Dr. Ahmed El-Naggar.png" alt="Dr. Ahmed El-Naggar">
           <div><div class="nm">Dr. Ahmed El-Naggar</div><div class="rl">Project Supervisor</div></div>
         </div>
         <div class="person">
-          <!-- لإضافة صورة المشرف: <img class="ph" src="images/supervisor-1.jpg"> -->
-          <div class="ph">PHOTO</div>
+          <img class="ph" src="images/صور الدكاتره/Dr. Mohamed Salah Reda.png" alt="Dr. Mohamed Salah Reda">
           <div><div class="nm">Dr. Mohamed Salah Reda</div><div class="rl">Project Supervisor</div></div>
         </div>
         <div class="person">
-          <div class="ph">PHOTO</div>
+          <img class="ph" src="images/صور الدكاتره/Eng. Osama Hefny.png" alt="Eng. Osama Hefny">
           <div><div class="nm">Eng. Osama Hefny</div><div class="rl">Teaching Assistant</div></div>
         </div>
       </div>
@@ -1093,22 +1091,22 @@
   var MAX = 8;
 
   var mobileData = [
-    { t:'Login Page',        d:'Secure access for operators & officers.', img:null },
-    { t:'Dashboard',         d:'Camera feeds, status & alerts.',          img:null },
-    { t:'Camera Monitoring', d:'Live multi-camera view.',                 img:null },
-    { t:'Detection Result',  d:'Activity with confidence score.',         img:null },
-    { t:'Incident Details',  d:'Full details of a flagged event.',        img:null },
-    { t:'Model Output',      d:'Sample AI detection example.',            img:null },
+    { t:'Login Page',        d:'Secure access for operators & officers.', img:'images/صور الدكاتره/فلاتر/1.png' },
+    { t:'Dashboard',         d:'Camera feeds, status & alerts.',          img:'images/صور الدكاتره/فلاتر/2.png' },
+    { t:'Camera Monitoring', d:'Live multi-camera view.',                 img:'images/صور الدكاتره/فلاتر/3.png' },
+    { t:'Detection Result',  d:'Activity with confidence score.',         img:'images/صور الدكاتره/فلاتر/4.png' },
+    { t:'Incident Details',  d:'Full details of a flagged event.',        img:'images/صور الدكاتره/فلاتر/5.png' },
+    { t:'Model Output',      d:'Sample AI detection example.',            img:'images/صور الدكاتره/فلاتر/6.png' },
     { t:'AI Assistant',      d:'Chat & smart guidance for officers.',     img:null },
     { t:'Notifications',     d:'Live alerts & assignment updates.',       img:null }
   ];
   var webData = [
-    { t:'Operator Dashboard', d:'Live cameras, incidents & system status.', img:null },
-    { t:'Incident & Map View',d:'Detected event with location & details.',  img:null },
-    { t:'Admin & Analytics',  d:'Cameras, users & detection reports.',      img:null },
-    { t:'Live Camera Wall',   d:'Multi-camera real-time monitoring.',       img:null },
-    { t:'Incident Queue',     d:'Pending & active incidents list.',         img:null },
-    { t:'Officers & Map',     d:'Live officer locations & dispatch.',       img:null },
+    { t:'Operator Dashboard', d:'Live cameras, incidents & system status.', img:'images/صور الدكاتره/ويب/1.png' },
+    { t:'Incident & Map View',d:'Detected event with location & details.',  img:'images/صور الدكاتره/ويب/2.png' },
+    { t:'Admin & Analytics',  d:'Cameras, users & detection reports.',      img:'images/صور الدكاتره/ويب/3.png' },
+    { t:'Live Camera Wall',   d:'Multi-camera real-time monitoring.',       img:'images/صور الدكاتره/ويب/4.png' },
+    { t:'Incident Queue',     d:'Pending & active incidents list.',         img:'images/صور الدكاتره/ويب/5.png' },
+    { t:'Officers & Map',     d:'Live officer locations & dispatch.',       img:'images/صور الدكاتره/ويب/6.png' },
     { t:'Analytics Reports',  d:'Detection trends & statistics.',           img:null },
     { t:'System Settings',    d:'Cameras, users & permissions.',            img:null }
   ];
@@ -1119,8 +1117,8 @@
   function capFont(cols, big, mid, sm){ return cols>=7 ? sm : cols>=5 ? mid : big; }
 
   var cfg = {
-    mobile: { count:8, cols:8 },
-    web:    { count:8, cols:8 }
+    mobile: { count:6, cols:6 },
+    web:    { count:6, cols:6 }
   };
 
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
