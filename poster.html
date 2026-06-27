@@ -475,12 +475,13 @@
   .feat .fd{ font-size:10.8mm; color:var(--muted); margin-top:1mm; line-height:1.2; }
 
   /* ====================== METHODOLOGY (workflow image slot) ====================== */
-  .mcard{ display:flex; flex-direction:column; align-self:start; }
-  .mflow-img{ width:100%; min-height:90mm; border:1mm dashed var(--line); border-radius:8mm;
+  .mcard{ display:flex; flex-direction:column; align-self:stretch; }
+  .mflow-img{ width:100%; flex:1; min-height:90mm; border:1mm dashed var(--line); border-radius:8mm;
     background:var(--soft); display:flex; align-items:center; justify-content:center; overflow:hidden; }
   /* image fills the slot width, natural height → no letterbox, box fits the image
      (max-height only caps extreme/portrait images; wide diagrams show in full) */
   .mflow-img img{ display:block; width:100%; height:auto; max-height:300mm; object-fit:cover; }
+  .mcard .mflow-img img{ height:100%; object-fit:contain; }
   .mflow-img .ph-txt{ text-align:center; color:var(--muted); font-size:13mm; font-weight:800; line-height:1.5; padding:8mm; }
   .mflow-img .ph-txt span{ display:block; margin-top:3mm; font-size:11mm; font-weight:600; }
 
