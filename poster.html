@@ -379,7 +379,10 @@
     grid-template-areas:"shots" "people"; align-items:start; }
   .sc-people{ grid-area:people; }
   .sc-shots{ grid-area:shots; }
-  .sc-people.people{ grid-template-columns:1fr 1.55fr; gap:10mm; align-items:start; }
+  .sc-people.people{ grid-template-columns:1fr 1.55fr; gap:10mm; align-items:stretch; }
+  .sc-people > div{ display:flex; flex-direction:column; min-width:0; }
+  .sc-people .sup,
+  .sc-people .team{ flex:1; }
   .sc-shots .shot-columns{ display:grid; grid-template-columns:1fr; gap:6mm; align-items:start; }
   .sc-shots .shot-col{ min-width:0; }
   .sc-shots .shots{ display:grid; gap:5mm; justify-items:center; align-items:start; }   /* columns set live by JS */
